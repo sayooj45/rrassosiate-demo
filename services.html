@@ -6,20 +6,17 @@
     <title>Services | RR Associates FZ LLC</title>
 
     <link rel="stylesheet" href="style.css" />
-
     <link rel="icon" href="pics/IMG-20260501-WA0025.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <!-- Top banner  -->
     <section class="top-banner">
       <div class="banner-left">
         <span class="location">Dubai, UAE</span>
@@ -41,12 +38,10 @@
       </div>
     </section>
 
-    <!-- ================= NAVBAR ================= -->
     <header class="header" style="top: 40px">
       <div class="container nav-wrap">
         <a href="index.html" class="logo-wrap">
-          <img src="./pics/logo.png" class="logo-img" />
-
+          <img src="./pics/logo.png" class="logo-img" alt="Logo" />
           <div class="logo-text">
             <h3>RR Associates</h3>
             <p>FZ LLC • Financial Excellence</p>
@@ -57,14 +52,10 @@
           <a href="index.html">Home</a>
           <a class="active" href="services.html">Services</a>
           <a href="about.html">About</a>
-          <!-- <a href="free-zone.html">Free Zones</a> -->
           <a href="industries.html">Industries</a>
-          <!-- <a href="blog.html">Insights</a> -->
-          <!-- <a href="careers.html">Careers</a> -->
           <a href="contact.html">Contact</a>
         </nav>
 
-        <!-- <a href="contact.html" class="btn-main">Free Consultation</a> -->
         <a href="https://arunassociatesac.com/" class="glow-button">
           <span class="arrow-icon">↗</span> Arun Associates India
         </a>
@@ -72,275 +63,151 @@
     </header>
 
     <div class="page" id="page-services">
-      <div class="services-page-hero">
-        <div class="services-page-hero-inner">
-          <div class="section-tag">What We Offer</div>
-          <h1>
-            Comprehensive <em>Financial Services</em><br />for UAE Businesses
+      <div class="services-hero-centered">
+        <div class="container services-hero-inner">
+          <div class="services-hero-tag-wrap">
+            <span class="services-hero-tag-text">WHAT WE OFFER</span>
+          </div>
+
+          <h1 class="services-hero-title">
+            Comprehensive <em>Financial Services</em><br />
+            <span class="services-italic-gold">for UAE Businesses.</span>
           </h1>
-          <p>
+
+          <p class="services-hero-lead">
             From VAT and Corporate Tax to audit and CFO advisory — we provide
             every financial service your business needs to thrive in the UAE.
           </p>
         </div>
       </div>
 
-      <div class="all-services">
-        <div class="service-category" id="sec-vat">
-          <div class="cat-header">
-            <div class="cat-icon">📋</div>
-            <h2>VAT Services</h2>
-          </div>
-          <div class="services-cards">
-            <div class="srv-card">
-              <h4>VAT Registration</h4>
-              <p>
-                Compulsory and voluntary VAT registration support with the
-                Federal Tax Authority, including TRN issuance.
-              </p>
+      <section class="services-matrix-section">
+        <div class="matrix-container">
+          <div class="matrix-block" id="sec-accounting">
+            <div class="matrix-col-left">
+              <div class="matrix-icon-placeholder">📋</div>
+              <div class="matrix-info">
+                <h2 class="matrix-heading">Accounting Services</h2>
+                <p class="matrix-description">
+                  Manage your business finances with accurate accounting,
+                  bookkeeping, and financial record management services.
+                </p>
+              </div>
             </div>
-            <div class="srv-card">
-              <h4>VAT Return Filing</h4>
-              <p>
-                Accurate preparation and submission of quarterly/monthly VAT
-                returns, with full reconciliation.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>VAT Advisory</h4>
-              <p>
-                Guidance on VAT treatment for complex transactions, contracts,
-                real estate, and cross-border dealings.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>VAT Health Check</h4>
-              <p>
-                Independent review of your VAT records and processes to identify
-                risks and compliance gaps.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>FTA Audit Support</h4>
-              <p>
-                Expert support during FTA audits — documentation preparation,
-                query responses, and representation.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>VAT De-registration</h4>
-              <p>
-                Guided de-registration when turnover falls below threshold or
-                business is winding down.
-              </p>
+            <div class="matrix-col-right">
+              <ul class="matrix-list">
+                <li>Accounts Reconciliation Services</li>
+                <li>Payroll Services</li>
+                <li>Bookkeeping Services</li>
+                <li>Forensic Accounting</li>
+                <li>Inventory Accounting</li>
+                <li>Management Accounting</li>
+                <li>Accounting Review Services</li>
+                <li>Accounts Outsourcing Services</li>
+                <li>Backlog Accounting</li>
+                <li>Cloud Accounting</li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div class="service-category" id="sec-ct">
-          <div class="cat-header">
-            <div class="cat-icon">🏢</div>
-            <h2>Corporate Tax</h2>
-          </div>
-          <div class="services-cards">
-            <div class="srv-card">
-              <h4>CT Registration</h4>
-              <p>
-                Corporate Tax registration for mainland and qualifying free zone
-                persons under the UAE CT Law.
-              </p>
+          <div class="matrix-block" id="sec-tax">
+            <div class="matrix-col-left">
+              <div class="matrix-icon-placeholder">🏛</div>
+              <div class="matrix-info">
+                <h2 class="matrix-heading">Taxation Services</h2>
+                <p class="matrix-description">
+                  Professional tax solutions to help your business stay
+                  compliant and manage taxes efficiently.
+                </p>
+              </div>
             </div>
-            <div class="srv-card">
-              <h4>Tax Return Preparation</h4>
-              <p>
-                Comprehensive preparation and filing of Corporate Tax returns
-                with all required schedules and disclosures.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Transfer Pricing</h4>
-              <p>
-                Related party transaction documentation, disclosure forms, and
-                master/local file preparation.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Tax Planning & Structuring</h4>
-              <p>
-                Legitimate tax minimization strategies including group
-                structures, elections, and reliefs.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>QFZP Analysis</h4>
-              <p>
-                Assessment of Qualifying Free Zone Person status and maintenance
-                of qualifying income conditions.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Tax Domicile Certificate</h4>
-              <p>
-                UAE Tax Residency Certificate applications for individuals and
-                companies for treaty purposes.
-              </p>
+            <div class="matrix-col-right">
+              <ul class="matrix-list">
+                <li>VAT Registration</li>
+                <li>VAT Return Filing</li>
+                <li>VAT Accounting</li>
+                <li>VAT Consultancy</li>
+                <li>Corporate Tax Services</li>
+                <li>Tax Advisory</li>
+                <li>Tax Accounting</li>
+                <li>Excise Tax Services</li>
+                <li>Tax Domicile Certificate</li>
+                <li class="empty-slot"></li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div class="service-category" id="sec-audit">
-          <div class="cat-header">
-            <div class="cat-icon">🔍</div>
-            <h2>Audit & Assurance</h2>
-          </div>
-          <div class="services-cards">
-            <div class="srv-card">
-              <h4>Statutory Audit</h4>
-              <p>
-                Independent audit of financial statements for free zone and
-                mainland companies in the UAE.
-              </p>
+          <div class="matrix-block" id="sec-compliance">
+            <div class="matrix-col-left">
+              <div class="matrix-icon-placeholder">⚖️</div>
+              <div class="matrix-info">
+                <h2 class="matrix-heading">Compliance & Regulatory Services</h2>
+                <p class="matrix-description">
+                  Ensure your business meets legal, financial, and regulatory
+                  requirements with confidence.
+                </p>
+              </div>
             </div>
-            <div class="srv-card">
-              <h4>Internal Audit</h4>
-              <p>
-                Risk-based internal audit services covering financial,
-                operational, and compliance dimensions.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Due Diligence</h4>
-              <p>
-                Financial and operational due diligence for acquisitions,
-                investments, and joint ventures.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Forensic Audit</h4>
-              <p>
-                Investigation of suspected fraud, financial irregularities, and
-                misappropriation.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Free Zone Approved Audit</h4>
-              <p>
-                Approved auditor services for DMCC, JAFZA, Meydan, RAKEZ, IFZA
-                and more.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Special Purpose Audit</h4>
-              <p>
-                Agreed-upon procedures, compilation engagements, and review
-                engagements as required.
-              </p>
+            <div class="matrix-col-right">
+              <ul class="matrix-list">
+                <li>ESR Filing Support</li>
+                <li>Financial Compliance Services</li>
+                <li>Regulatory Filing Support</li>
+                <li>Internal Financial Controls</li>
+                <li>Risk & Compliance Advisory</li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div class="service-category" id="sec-accounting">
-          <div class="cat-header">
-            <div class="cat-icon">📊</div>
-            <h2>Accounting Services</h2>
-          </div>
-          <div class="services-cards">
-            <div class="srv-card">
-              <h4>Bookkeeping</h4>
-              <p>
-                Accurate, organized bookkeeping — daily, weekly, or monthly —
-                using your preferred software.
-              </p>
+          <div class="matrix-block" id="sec-financial">
+            <div class="matrix-col-left">
+              <div class="matrix-icon-placeholder">📈</div>
+              <div class="matrix-info">
+                <h2 class="matrix-heading">
+                  Financial Advisory & Consulting Services
+                </h2>
+                <p class="matrix-description">
+                  Strategic financial guidance and business consulting to
+                  support growth and better decision-making.
+                </p>
+              </div>
             </div>
-            <div class="srv-card">
-              <h4>Payroll Management</h4>
-              <p>
-                Full-cycle payroll processing compliant with UAE labour law,
-                including WPS and leave calculations.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Management Reporting</h4>
-              <p>
-                Monthly/quarterly management accounts, KPI dashboards, and
-                board-ready financial reports.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Accounts Outsourcing</h4>
-              <p>
-                Fully outsourced finance function from transaction processing to
-                year-end financial statements.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Accounting Software</h4>
-              <p>
-                Setup and support for Xero, QuickBooks, Zoho Books, Tally, and
-                other cloud accounting platforms.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Backlog Accounting</h4>
-              <p>
-                Catch-up bookkeeping to bring overdue accounts up to date
-                quickly and accurately.
-              </p>
+            <div class="matrix-col-right">
+              <ul class="matrix-list">
+                <li>Financial Advisory</li>
+                <li>Business Financial Analysis</li>
+                <li>Budgeting & Forecasting</li>
+                <li>Cash Flow Management</li>
+                <li>Financial Reporting</li>
+                <li>CFO Advisory Services</li>
+                <li>Business Performance Analysis</li>
+              </ul>
             </div>
           </div>
-        </div>
 
-        <div class="service-category" id="sec-advisory">
-          <div class="cat-header">
-            <div class="cat-icon">💼</div>
-            <h2>Advisory Services</h2>
-          </div>
-          <div class="services-cards">
-            <div class="srv-card">
-              <h4>Outsourced CFO</h4>
-              <p>
-                Strategic financial leadership — part-time or full-time —
-                without the overhead of a full-time hire.
-              </p>
+          <div class="matrix-block" id="sec-payroll">
+            <div class="matrix-col-left">
+              <div class="matrix-icon-placeholder">👥</div>
+              <div class="matrix-info">
+                <h2 class="matrix-heading">Payroll & HR Finance Services</h2>
+                <p class="matrix-description">
+                  Simplify payroll processing and employee financial management
+                  with reliable support services.
+                </p>
+              </div>
             </div>
-            <div class="srv-card">
-              <h4>Business Valuation</h4>
-              <p>
-                Independent valuations for M&amp;A, shareholder disputes,
-                investment, and estate planning.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>IFRS Advisory</h4>
-              <p>
-                Technical IFRS guidance, impact assessments, and IFRS-compliant
-                financial statement preparation.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Economic Substance</h4>
-              <p>
-                ESR assessment, notification, and reporting for UAE entities
-                subject to the regulations.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Business Planning</h4>
-              <p>
-                Financial models, projections, and bankable business plans for
-                funding and growth planning.
-              </p>
-            </div>
-            <div class="srv-card">
-              <h4>Company Liquidation</h4>
-              <p>
-                Orderly voluntary liquidation support for mainland and free zone
-                entities.
-              </p>
+            <div class="matrix-col-right">
+              <ul class="matrix-list">
+                <li>Payroll Processing</li>
+                <li>Salary & Wage Management</li>
+                <li>Employee Compensation Support</li>
+                <li>Payroll Tax Support</li>
+                <li>HR Financial Documentation</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div class="cta-banner section-full">
         <h2>Not Sure What You Need?</h2>
@@ -348,24 +215,11 @@
           Our advisors will assess your business and recommend exactly the right
           service package for you.
         </p>
-        <a href="#" class="btn-dark" onclick="showPage('contact')"
-          >Talk to an Expert</a
-        >
-      </div>
-
-      <div class="mini-cta-box">
-        <h3>Need AML Compliance Support?</h3>
-        <p>
-          We help UAE businesses meet AML regulations, reporting obligations,
-          and internal control requirements.
-        </p>
-        <a href="aml.html" class="btn-main">Explore AML Services</a>
+        <a href="contact.html" class="btn-dark">Talk to an Expert</a>
       </div>
     </div>
 
-    <!-- ================= FOOTER ================= -->
     <footer class="footer-premium">
-      <!-- TOP CTA STRIP -->
       <div class="footer-top-strip">
         <div class="container footer-strip-wrap">
           <div>
@@ -376,14 +230,11 @@
               Business Setup.
             </p>
           </div>
-
-          <a href="contact.html" class="footer-btn">Free Consultation</a>
+          <a href="contact.html" class="footer-btn">Contact Us</a>
         </div>
       </div>
 
-      <!-- MAIN FOOTER -->
       <div class="container footer-main-grid">
-        <!-- BRAND -->
         <div class="footer-brand">
           <div class="footer-logo-wrap">
             <img src="./pics/IMG-20260501-WA0025.jpg" alt="RR Associates" />
@@ -392,12 +243,10 @@
               <span>FZ LLC • Financial Excellence</span>
             </div>
           </div>
-
           <p>
             Trusted accounting, tax and advisory specialists helping UAE
             businesses scale with clarity, compliance and confidence.
           </p>
-
           <div class="footer-badges">
             <span>✔ UAE Focused</span>
             <span>✔ Confidential</span>
@@ -405,7 +254,6 @@
           </div>
         </div>
 
-        <!-- SERVICES -->
         <div>
           <h4>Services</h4>
           <a href="#">VAT Services</a>
@@ -415,7 +263,6 @@
           <a href="#">Business Setup</a>
         </div>
 
-        <!-- QUICK LINKS -->
         <div>
           <h4>Quick Links</h4>
           <a href="about.html">About Us</a>
@@ -425,7 +272,6 @@
           <a href="contact.html">Contact</a>
         </div>
 
-        <!-- CONTACT -->
         <div>
           <h4>Contact</h4>
           <a href="#">Dubai, UAE</a>
@@ -438,7 +284,6 @@
       <div class="footer-bottom">
         <div class="container footer-bottom-wrap">
           <p>© 2026 RR Associates FZ LLC. All Rights Reserved.</p>
-
           <div class="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms</a>

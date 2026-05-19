@@ -886,7 +886,7 @@ h4 {
 }
 
 .footer-mini {
-  color: #ffd700;
+  color: var(--gold);
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -906,7 +906,7 @@ h4 {
 }
 
 .footer-btn {
-  background: linear-gradient(135deg, #ffd700, #fff1a0);
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
   color: #001f3f;
   padding: 16px 30px;
   border-radius: 50px;
@@ -927,7 +927,7 @@ h4 {
 }
 
 .footer-main-grid h4 {
-  color: #ffd700;
+  color: var(--gold);
   margin-bottom: 20px;
   font-size: 22px;
 }
@@ -940,7 +940,7 @@ h4 {
 }
 
 .footer-main-grid a:hover {
-  color: #ffd700;
+  color: var(--gold);
   transform: translateX(4px);
 }
 
@@ -1019,7 +1019,7 @@ h4 {
 }
 
 .footer-bottom-links a:hover {
-  color: #ffd700;
+  color: var(--gold);
 }
 
 /* MOBILE */
@@ -1440,43 +1440,110 @@ h4 {
 
 /* ================= CTA ================= */
 
+/* Base Section Wrapper to provide the dark canvas */
+.services-matrix-section {
+  background-color: var(--navy);
+}
+
+/* CTA Banner Main Box */
 .cta-banner.section-full {
-  margin: 0 auto 110px;
+  margin: 60px auto 100px;
   width: 92%;
-  max-width: 1320px;
-  padding: 75px 60px;
-  border-radius: 30px;
+  max-width: 1200px;
+  padding: 60px 40px;
+
   text-align: center;
-  background: linear-gradient(135deg, #001f3f, #0b2c53);
-  color: #fff;
-  box-shadow: 0 25px 50px rgba(0, 31, 63, 0.16);
+
+  /* Subtle dark gradient matching the reference */
+  background: linear-gradient(115deg, #0f223f 0%, #152744 50%, #111e35 100%);
+
+  /* Semi-transparent border outline */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
+/* Heading Styling */
 .cta-banner h2 {
-  font-size: 58px;
-  line-height: 1.05;
-  margin-bottom: 16px;
+  font-family: "Playfair Display", serif; /* Elegant serif typeface matching image */
+  font-size: 32px; /* Scaled down from 58px to match screenshot scale */
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.3px;
 }
 
+/* Subtext Paragraph Styling */
 .cta-banner p {
-  max-width: 760px;
+  max-width: 680px;
   margin: 0 auto 30px;
-  color: #d6dce5;
-  font-size: 17px;
-  line-height: 1.8;
+  color: #798da3; /* Slightly muted tone to give depth to heading */
+  font-size: 15px;
+  line-height: 1.6;
 }
 
+/* Button Component */
 .cta-banner .btn-dark {
-  background: linear-gradient(135deg, var(--gold), #fff1a8);
-  color: var(--navy);
-  font-weight: 700;
-  padding: 15px 28px;
-  border-radius: 40px;
+  background-color: #cca44c; /* Specific warm golden-mustard shade */
+  color: #121e36; /* Dark navy text */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 6px; /* Structured square-rounded corners */
   display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(204, 164, 76, 0.15);
 }
 
+/* Button Hover State */
 .cta-banner .btn-dark:hover {
-  transform: translateY(-4px);
+  background-color: #dbae53;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(204, 164, 76, 0.25);
+}
+
+/* --- Media Queries for Perfect Responsiveness --- */
+
+/* Tablet Viewports */
+@media (max-width: 768px) {
+  .cta-banner.section-full {
+    padding: 50px 30px;
+    width: 95%;
+    margin-bottom: 60px;
+  }
+
+  .cta-banner h2 {
+    font-size: 26px;
+  }
+
+  .cta-banner p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile Viewports */
+@media (max-width: 480px) {
+  .cta-banner.section-full {
+    padding: 40px 20px;
+    border-radius: 8px;
+  }
+
+  .cta-banner h2 {
+    font-size: 22px;
+  }
+
+  .cta-banner p {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .cta-banner .btn-dark {
+    width: 100%; /* Makes button fluid/full-width on pocket screens */
+    box-sizing: border-box;
+    padding: 14px 20px;
+  }
 }
 
 /* ================= AML CTA BOX ================= */
@@ -1891,7 +1958,7 @@ h4 {
   background-attachment: fixed;
 }
 
-.industries-hero-inner {
+/* .industries-hero-inner {
   width: 92%;
   max-width: 980px;
   margin: auto;
@@ -1925,11 +1992,11 @@ h4 {
   color: #d7dfe8;
   max-width: 760px;
   margin: auto;
-}
+} */
 
 /* section */
 
-.industries-grid-section {
+/* .industries-grid-section {
   padding: 110px 0;
   background: #fff;
   text-align: center;
@@ -1944,11 +2011,11 @@ h4 {
 .industries-grid-section .section-title em {
   font-style: normal;
   color: var(--gold);
-}
+} */
 
 /* grid */
 
-.industries-cards {
+/* .industries-cards {
   width: 92%;
   max-width: 1320px;
   margin: 55px auto 0;
@@ -1956,11 +2023,11 @@ h4 {
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
   text-align: left;
-}
+} */
 
 /* card */
 
-.ind-card {
+/* .ind-card {
   background: #fff;
   border: 1px solid #edf1f5;
   border-radius: 26px;
@@ -2043,7 +2110,7 @@ h4 {
   top: 0;
   font-weight: 700;
   color: var(--gold);
-}
+} */
 
 /* CTA banner */
 
@@ -2185,10 +2252,10 @@ h4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .industries-hero h1,
+  /* .industries-hero h1,
   .cta-banner h2 {
     font-size: 52px;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
@@ -2201,20 +2268,19 @@ h4 {
     background-attachment: scroll;
   }
 
-  .industries-hero h1,
-  .industries-grid-section .section-title,
+  h1,
+  .section-title,
   .cta-banner h2 {
     font-size: 40px;
   }
 
-  .industries-grid-section,
   .cta-banner {
     padding: 80px 0;
   }
 
-  .ind-card {
+  /* .ind-card {
     padding: 28px 24px;
-  }
+  } */
 }
 
 .blog-hero {
@@ -2549,7 +2615,7 @@ h4 {
   padding: 110px 0;
 }
 
-.section-title {
+/* .section-title {
   font-size: 56px;
   line-height: 1.1;
   color: var(--navy);
@@ -2559,7 +2625,7 @@ h4 {
 .section-title em {
   color: var(--gold);
   font-style: normal;
-}
+} */
 
 .section-sub {
   max-width: 760px;
@@ -2917,7 +2983,7 @@ h4 {
   align-items: start;
 }
 
-.section-title {
+/* .section-title {
   font-size: 56px;
   line-height: 1.1;
   margin: 14px 0 20px;
@@ -2927,7 +2993,7 @@ h4 {
 .section-title em {
   color: var(--gold);
   font-style: normal;
-}
+} */
 
 .section-sub {
   color: #6d7b8a;
@@ -3166,7 +3232,7 @@ h4 {
   margin: auto;
 }
 
-.section-tag {
+/* .section-tag {
   display: inline-block;
   background: rgba(255, 255, 255, 0.12);
   padding: 8px 18px;
@@ -3176,7 +3242,7 @@ h4 {
   letter-spacing: 1px;
   margin-bottom: 18px;
   text-transform: uppercase;
-}
+} */
 
 .faq-hero h1 {
   font-size: 52px;
@@ -3365,9 +3431,9 @@ h4 {
     font-size: 28px;
   }
 
-  .section-tag {
+  /* .section-tag {
     font-size: 11px;
-  }
+  } */
 
   .faq-content {
     margin: 45px auto;
@@ -3406,7 +3472,7 @@ h4 {
   color: var(--navy);
 }
 
-.section-tag {
+/* .section-tag {
   display: inline-block;
   padding: 8px 18px;
   border-radius: 50px;
@@ -3415,7 +3481,7 @@ h4 {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 22px;
-}
+} */
 
 .aml-hero h1 {
   font-size: 56px;
@@ -3450,7 +3516,7 @@ h4 {
   align-items: start;
 }
 
-.section-title {
+/* .section-title {
   font-size: 42px;
   line-height: 1.2;
   margin-bottom: 24px;
@@ -3461,7 +3527,7 @@ h4 {
 .section-title em {
   color: var(--gold);
   font-style: normal;
-}
+} */
 
 .aml-text p {
   font-size: 17px;
@@ -3616,9 +3682,9 @@ h4 {
     font-size: 40px;
   }
 
-  .section-title {
+  /* .section-title {
     font-size: 32px;
-  }
+  } */
 
   .aml-checklist {
     grid-template-columns: 1fr;
@@ -3639,9 +3705,9 @@ h4 {
     font-size: 16px;
   }
 
-  .section-title {
+  /* .section-title {
     font-size: 28px;
-  }
+  } */
 
   .amount {
     font-size: 32px;
@@ -3657,7 +3723,7 @@ h4 {
   color: #0f172a;
 }
 
-.section-tag {
+/* .section-tag {
   display: inline-block;
   background: #e0f2fe;
   color: #0284c7;
@@ -3668,9 +3734,9 @@ h4 {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 18px;
-}
+} */
 
-.section-title {
+/* .section-title {
   font-size: 44px;
   line-height: 1.2;
   font-weight: 700;
@@ -3681,7 +3747,7 @@ h4 {
 .section-title em {
   color: #0ea5e9;
   font-style: normal;
-}
+} */
 
 .biz-hero {
   background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -3908,10 +3974,10 @@ h4 {
   .biz-hero h1 {
     font-size: 40px;
   }
-
+  /* 
   .section-title {
     font-size: 34px;
-  }
+  } */
 
   .biz-options,
   .biz-step-list,
@@ -3934,9 +4000,9 @@ h4 {
     font-size: 16px;
   }
 
-  .section-title {
+  /* .section-title {
     font-size: 28px;
-  }
+  } */
 
   .cta-banner h2 {
     font-size: 28px;
@@ -5339,7 +5405,7 @@ h4 {
 ================================================== */
 
 .heritage-section {
-  background-color: #f9f6f0; /* Warm premium off-white/light ivory canvas background */
+  background-color: #fff; /* Warm premium off-white/light ivory canvas background */
   padding: 100px 0 0 0; /* Bottom padding handled cleanly by the dark baseline strip */
   width: 100%;
   box-sizing: border-box;
@@ -5767,7 +5833,7 @@ h4 {
 ================================================== */
 
 .values-section {
-  background-color: #f9f6f0; /* Matches the warm ivory/bone light background canvas */
+  background-color: #fff; /* Matches the warm ivory/bone light background canvas */
   padding: 120px 0;
   width: 100%;
   box-sizing: border-box;
@@ -5817,7 +5883,9 @@ h4 {
 
 /* Individual Card Blocks Structural Assembly */
 .value-card {
-  background-color: #ffffff; /* Crisp stark clean white inner layout card box */
+  background-color: var(
+    --navy2
+  ); /* Crisp stark clean white inner layout card box */
   padding: 50px 40px 45px 40px;
   box-sizing: border-box;
   border: 1px solid rgba(3, 8, 14, 0.04); /* Subdued perimeter boundary line */
@@ -5844,12 +5912,13 @@ h4 {
   font-size: 42px;
   font-weight: 500;
   font-style: italic;
-  color: rgba(
+  /* color: rgba(
     237,
     182,
     66,
     0.25
-  ); /* Faint elegant gold numeric reference line stamp */
+  ); Faint elegant gold numeric reference line stamp */
+  color: #ffff;
   line-height: 1;
   display: block;
   margin-bottom: 24px;
@@ -5857,7 +5926,7 @@ h4 {
 
 .value-card-title {
   font-family: "Playfair Display", Georgia, serif;
-  color: #03080e;
+  color: var(--gold);
   font-size: 22px;
   font-weight: 600;
   margin: 0 0 16px 0;
@@ -6112,7 +6181,7 @@ h4 {
 ================================================== */
 
 .ready-cta-section {
-  background-color: #f9f6f0; /* Deep core premium corporate dark canvas background */
+  background-color: #fff; /* Deep core premium corporate dark canvas background */
   padding: 100px 0;
   width: 100%;
   box-sizing: border-box;
@@ -6220,5 +6289,506 @@ h4 {
     padding: 16px 30px;
     font-size: 12.5px;
     box-sizing: border-box;
+  }
+}
+
+/* ==================================================
+   UPDATED CENTERED SERVICES HERO SECTION
+================================================== */
+
+.services-hero-centered {
+  position: relative;
+  /* Deep navy gradient blend overlaid safely on top of your background skyline asset */
+  background: linear-gradient(rgba(0, 31, 63, 0.82), rgba(0, 31, 63, 0.88)),
+    url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80")
+      no-repeat center center / cover;
+  padding: 180px 0 110px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Forces clean text horizontal centering natively */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* min-height: 92vh;
+  padding-top: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 31, 63, 0.82), rgba(0, 31, 63, 0.88)),
+    url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+
+.services-hero-inner {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tagline Container and Decorative Gold Lines */
+.services-hero-tag-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.services-hero-tag-wrap::before,
+.services-hero-tag-wrap::after {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 1px;
+  background-color: var(--gold, #edb642);
+}
+
+.services-hero-tag-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Main Display Typography */
+.services-hero-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.5px;
+}
+
+.services-hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+.services-italic-gold {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Content Explanatory Paragraph */
+.services-hero-lead {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #a3b8cc; /* Soft muted metallic blue readability gray tint */
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 650px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ================= COMPREHENSIVE VIEWPORT RESPONSIVENESS ================= */
+
+@media (max-width: 1024px) {
+  .services-hero-centered {
+    padding: 150px 0 90px 0;
+  }
+  .services-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero-centered {
+    padding: 130px 20px 80px 20px;
+  }
+  .services-hero-title {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+  .services-hero-lead {
+    font-size: 14.5px;
+  }
+  .services-hero-tag-wrap::before,
+  .services-hero-tag-wrap::after {
+    width: 20px; /* Shortens border rules slightly on tight mobile screen sizes */
+  }
+}
+
+/* Container styling */
+.services-matrix-section {
+  background-color: var(
+    --navy
+  ); /* Dark navy background matching the screenshot */
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif; /* Clean sans-serif font */
+}
+
+.matrix-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between different service blocks */
+}
+
+/* Individual Block Box */
+.matrix-block {
+  background-color: var(--navy2); /* Lighter navy blue for the card */
+  border: 1px solid #233554;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Upper Section: Header Info */
+.matrix-col-left {
+  padding: 30px 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Temporary icon replacement to match screenshot */
+.matrix-icon-placeholder {
+  background: #233554;
+  border: 1px solid #3b4f73;
+  border-radius: 8px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8b2d1;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.matrix-heading {
+  color: #ffffff;
+  font-family: "Playfair Display", serif; /* Serif font for headings */
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.matrix-description {
+  color: #7f92b3;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Lower Section: 5-Column Grid Matrix */
+.matrix-col-right {
+  border-top: 1px solid #233554; /* Separates header from the list matrix */
+}
+
+.matrix-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 Equal Columns */
+}
+
+.matrix-list li {
+  color: #8892b0;
+  font-size: 13px;
+  padding: 25px 20px;
+  border-right: 1px solid #233554;
+  border-bottom: 1px solid #233554;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+  min-height: 70px;
+}
+
+/* Remove unnecessary border on the 5th item of every row */
+.matrix-list li:nth-child(5n) {
+  border-right: none;
+}
+
+/* Bullet Point Styling matching the screenshots */
+.matrix-list li::before {
+  content: "•";
+  color: #c5a880; /* Light gold accent color */
+  font-size: 16px;
+}
+
+/* Empty grid filler item styling */
+.matrix-list li.empty-slot::before {
+  content: none;
+}
+
+/* Responsive fix for smaller viewports */
+@media (max-width: 1024px) {
+  .matrix-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .matrix-list li:nth-child(5n) {
+    border-right: 1px solid #233554;
+  }
+  .matrix-list li:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .matrix-list {
+    grid-template-columns: 1fr;
+  }
+  .matrix-list li {
+    border-right: none !important;
+  }
+}
+
+/* Industries Hero Section Main Frame */
+.industries-hero {
+  background-color: #0d2e6b; /* Exact deep royal blue background matching the reference */
+  padding: 100px 20px 90px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Central Alignment Shell */
+.industries-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Small Upper Tracking Label */
+.sectors-tag {
+  color: #cca44c; /* Warm gold accent tone */
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+/* Primary Page Heading Structure */
+.hero-heading {
+  color: #ffffff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 54px; /* Perfectly scaled to look prominent and elegant */
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Gold Script-Italic Typography Accent */
+.highlight-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #cca44c; /* Matches tag color precisely */
+  font-weight: 500;
+}
+
+/* Multi-Line Informative Paragraph Style */
+.hero-subtext {
+  color: #a4b7d3; /* Soft blueprint blue-gray tone for optimal readability */
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+  .industries-hero {
+    padding: 80px 20px 70px 20px;
+  }
+
+  .hero-heading {
+    font-size: 38px;
+    margin-bottom: 18px;
+  }
+
+  .hero-subtext {
+    font-size: 14px;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 480px) {
+  .industries-hero {
+    padding: 60px 16px 50px 16px;
+  }
+
+  .sectors-tag {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .hero-heading {
+    font-size: 30px;
+  }
+}
+
+/* Section Base Canvas Wrapper */
+.industries-grid-section {
+  background-color: #f4f7fc; /* Provides contrast for the deep navy cards */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-tag {
+  color: #cca44c;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  color: #0d2e6b;
+  margin: 0 0 50px 0;
+  font-weight: 500;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Three-Column Responsive Cards Grid Container */
+.industries-cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Premium Card Main Block */
+.ind-card {
+  background-color: #0b2554; /* Solid Deep Blue Container from Screenshot */
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(11, 37, 84, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ind-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(11, 37, 84, 0.15);
+}
+
+/* Card Image Header Box */
+.ind-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.ind-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Retains perspective ratios during window resizing */
+}
+
+/* Inner Copy/Content Area */
+.ind-card-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ind-card-content h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 500;
+  margin: 0 0 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ind-icon {
+  font-size: 18px;
+}
+
+.ind-card-content p {
+  font-family: "Inter", sans-serif;
+  color: #9cb1d6; /* Muted blue-gray text color */
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  flex-grow: 1; /* Pushes tags container to line up horizontally */
+}
+
+/* Badges Flex Grid Wrapper Layout */
+.ind-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+/* Refined Outline Chip Badges */
+.ind-tag-chip {
+  font-family: "Inter", sans-serif;
+  color: #cca44c; /* Warm gold text */
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid rgba(204, 164, 76, 0.3); /* Subtle clear gold outline border */
+  border-radius: 4px;
+  background-color: rgba(204, 164, 76, 0.04);
+}
+
+/* --- Responsive Media Viewport Breaks --- */
+
+@media (max-width: 1024px) {
+  .industries-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns on Tablets */
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 650px) {
+  .industries-cards {
+    grid-template-columns: 1fr; /* Single column layout on smart phones */
+  }
+
+  .ind-card-image {
+    height: 180px;
   }
 }
