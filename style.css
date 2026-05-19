@@ -4660,7 +4660,7 @@ h4 {
 ================================================== */
 
 .leadership-section {
-  background-color: var(--navy);
+  background-color: #fff;
   padding: 100px 0;
   width: 100%;
   box-sizing: border-box;
@@ -4696,7 +4696,7 @@ h4 {
 /* Header Title */
 .leadership-main-title {
   font-family: "Playfair Display", Georgia, serif;
-  color: #ffffff;
+  color: var(--navy);
   font-size: 52px;
   font-weight: 700;
   text-align: center;
@@ -4879,12 +4879,12 @@ h4 {
 }
 
 /* ==================================================
-   PREMIUM DARK BLOG SECTION
+   PREMIUM TEXT-BASED EDITORIAL BLOG SECTION
 ================================================== */
 
-.dark-blog-section {
-  background-color: #03080e; /* Matches your core dark section background */
-  padding: 100px 0;
+.dark-blog-editorial {
+  background-color: var(--navy); /* Matches your core dark background */
+  padding: 110px 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -4895,173 +4895,131 @@ h4 {
   font-size: 52px;
   font-weight: 700;
   margin-top: 15px;
-  margin-bottom: 55px;
+  margin-bottom: 60px;
   line-height: 1.2;
 }
 
-/* Responsive Blog Grid Layout */
-.blog-grid-container {
+/* 3-Column Grid for Desktop */
+.blog-editorial-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 32px;
   width: 100%;
 }
 
-/* Premium Blog Card Structure */
-.blog-post-card {
-  background-color: var(
-    --navy3,
-    #02162d
-  ); /* Matches your deep navy internal cards */
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 12px;
-  overflow: hidden; /* Clips image corners cleanly to match the border radius */
+/* Entire card acts as a clean, responsive link wrapper */
+.editorial-card {
+  text-decoration: none;
+  background-color: var(--navy3, #02162d); /* Matches your deep navy cards */
+  border-top: 3px solid rgba(255, 255, 255, 0.05); /* Premium horizontal boundary divider line */
+  padding: 40px 30px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  justify-content: flex-start;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.blog-post-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+/* Hover State: Turns top border line gold and darkens card background seamlessly */
+.editorial-card:hover {
+  background-color: #051d38;
+  border-top-color: var(--gold, #edb642);
+  transform: translateY(-4px);
 }
 
-/* Image Thumbnail Container */
-.blog-image-wrapper {
-  position: relative;
+/* Header Metadata Meta Row */
+.editorial-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
   width: 100%;
-  height: 230px;
-  overflow: hidden;
-  background-color: #08294b;
 }
 
-.blog-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.blog-post-card:hover .blog-image-wrapper img {
-  transform: scale(1.06); /* Smooth premium image zoom when card is hovered */
-}
-
-/* Overlay Category Badge */
-.blog-category-tag {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: var(--gold, #edb642);
-  color: #03080e;
+.editorial-category {
   font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(
+    --gold,
+    #edb642
+  ); /* Uses bright gold for category text highlights */
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 6px 14px;
-  border-radius: 4px;
+  letter-spacing: 1.5px;
 }
 
-/* Content Area inside Card */
-.blog-card-content {
-  padding: 30px 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Pushes the 'Read More' link uniformly to the baseline */
-}
-
-.blog-meta-data {
-  margin-bottom: 12px;
-}
-
-.blog-date {
+.editorial-date {
   font-family: "Plus Jakarta Sans", sans-serif;
-  color: #626f7c; /* Muted corporate grey text */
+  color: #626f7c; /* Subtle grey for publication dates */
   font-size: 13px;
   font-weight: 500;
 }
 
-/* Post Typography links */
-.blog-card-content h3 {
-  margin: 0 0 14px 0;
-  line-height: 1.3;
-}
-
-.blog-title-link {
+/* Body Content Styling */
+.editorial-card-body h3 {
   font-family: "Playfair Display", Georgia, serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.blog-title-link:hover {
-  color: var(--gold, #edb642); /* Turns title gold on interactive hover */
-}
-
-.blog-card-content p {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  color: #a3b8cc; /* Soft greyish blue text for enhanced description contrast */
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0 0 24px 0;
-}
-
-/* Modern Link Button at Bottom */
-.blog-read-more-btn {
-  margin-top: auto; /* Aligns precisely on the lower margin border */
-  display: inline-flex;
+  line-height: 1.35;
+  margin: 0 0 16px 0;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 6px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Custom interactive arrow that tracks rightward upon card interaction */
+.editorial-arrow {
+  color: #626f7c;
+  font-size: 22px;
+  font-weight: 300;
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding-left: 10px;
+}
+
+.editorial-card:hover .editorial-arrow {
   color: var(--gold, #edb642);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: gap 0.2s ease;
+  transform: translateX(6px);
 }
 
-.blog-read-more-btn .arrow {
-  transition: transform 0.2s ease;
+.editorial-card-body p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #a3b8cc; /* Soft contrast grayish blue description text */
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
 }
 
-.blog-read-more-btn:hover .arrow {
-  transform: translateX(4px); /* Interactive nudge forward arrow movement */
-}
-
-/* ================= COMPREHENSIVE RESPONSIVE VIEWPORTS ================= */
+/* ================= COMPREHENSIVE RESPONSIVE BREAKPOINTS ================= */
 
 @media (max-width: 1024px) {
   .blog-main-title {
     font-size: 42px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
   }
-  .blog-grid-container {
+  .blog-editorial-grid {
     grid-template-columns: repeat(
       2,
       1fr
-    ); /* Drops beautifully to a 2-column layout on tablets */
+    ); /* Responsive switch to 2 columns on tablets */
     gap: 24px;
   }
-  .blog-title-link {
-    font-size: 21px;
+  .editorial-card {
+    padding: 35px 24px;
   }
 }
 
 @media (max-width: 768px) {
-  .blog-grid-container {
-    grid-template-columns: 1fr; /* Formats into a clean vertical single column stack on mobile mobile formats */
-    gap: 28px;
+  .blog-editorial-grid {
+    grid-template-columns: 1fr; /* Clean single file column array display on phone viewports */
+    gap: 20px;
   }
   .blog-main-title {
     font-size: 34px;
     margin-bottom: 35px;
   }
-  .blog-image-wrapper {
-    height: 200px; /* Slims image container space slightly on phone displays */
-  }
-  .blog-card-content {
-    padding: 24px 20px;
+  .editorial-card {
+    padding: 32px 20px;
   }
 }
