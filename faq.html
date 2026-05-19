@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | RR Associates</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="pics/IMG-20260501-WA0025.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="header">
+        <div class="container nav-wrap">
+
+            <a href="#" class="logo-wrap">
+                <img src="./pics/IMG-20260501-WA0025.jpg" class="logo-img">
+                <div class="logo-text">
+                    <h3>RR Associates</h3>
+                    <p>FZ LLC • Financial Excellence</p>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a class="active" href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="free-zone.html">Free Zones</a>
+                <a href="industries.html">Industries</a>
+                <a href="blog.html">Insights</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <a href="contact.html" class="btn-main">Free Consultation</a>
+
+        </div>
+    </header>
+
+    <div class="page" id="page-faq">
+        <div class="faq-hero">
+            <div class="faq-hero-inner">
+                <div class="section-tag">Questions & Answers</div>
+                <h1>Frequently Asked <em>Questions</em></h1>
+                <p>Answers to the most common questions about our services and UAE tax and accounting regulations.</p>
+            </div>
+        </div>
+
+        <div class="faq-content">
+            <div class="faq-group">
+                <div class="faq-group-title">About RR Associates</div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">What services does RR Associates provide?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">RR Associates provides a full range of financial services including VAT advisory
+                        and compliance, UAE Corporate Tax, statutory and internal audit, bookkeeping, payroll,
+                        management accounting, outsourced CFO services, and business advisory. We serve clients across
+                        Dubai and the wider UAE.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Who do you typically work with?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">We work with entrepreneurs, SMEs, free zone companies, family offices, and
+                        high-net-worth individuals. Our client base spans multiple industries including real estate,
+                        technology, trading, hospitality, and financial services.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">How do I get started with RR Associates?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">Simply reach out via our contact page or call us directly. We offer a free
+                        initial consultation where we assess your needs and propose a tailored solution. There is no
+                        obligation, and most clients are fully onboarded within a week.</div>
+                </div>
+            </div>
+
+            <div class="faq-group">
+                <div class="faq-group-title">VAT in UAE</div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Who needs to register for VAT in the UAE?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">Businesses with taxable supplies or imports exceeding AED 375,000 per annum must
+                        mandatorily register for VAT. Voluntary registration is available if turnover exceeds AED
+                        187,500. RR Associates will assess your threshold and guide you through the registration
+                        process.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">How often do I need to file VAT returns?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">Most businesses in the UAE file VAT returns quarterly. However, businesses with
+                        annual turnover exceeding AED 150 million are required to file monthly. The FTA assigns your tax
+                        period during registration. Late filing attracts administrative penalties.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">What is the VAT rate in the UAE?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">The standard VAT rate in the UAE is 5%. Certain supplies such as healthcare,
+                        education, international transport, and residential properties may be zero-rated (0%). Some
+                        supplies are exempt, meaning no VAT is charged and input VAT cannot be recovered.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">What happens if I miss a VAT filing deadline?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">Missing the VAT filing deadline results in administrative penalties from the FTA,
+                        starting at AED 1,000 for the first offence and AED 2,000 for subsequent offences within 24
+                        months. Additional penalties apply for late payment of VAT due. Our team ensures you never miss
+                        a deadline.</div>
+                </div>
+            </div>
+
+            <div class="faq-group">
+                <div class="faq-group-title">UAE Corporate Tax</div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">What is the UAE Corporate Tax rate?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">The UAE Corporate Tax is levied at 0% on taxable income up to AED 375,000 and 9%
+                        on taxable income above AED 375,000. Multinational groups subject to the OECD Pillar Two rules
+                        may be subject to a minimum effective tax rate of 15% under the Qualified Domestic Minimum
+                        Top-up Tax (QDMTT).</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Are free zone companies exempt from Corporate
+                        Tax?<span class="chevron">+</span></button>
+                    <div class="faq-a">Qualifying Free Zone Persons (QFZPs) may benefit from a 0% Corporate Tax rate on
+                        their qualifying income. However, they must satisfy strict substance requirements, maintain
+                        adequate presence in the free zone, and not earn income from non-qualifying activities. RR
+                        Associates can assess your QFZP eligibility.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">When does UAE Corporate Tax apply to my
+                        business?<span class="chevron">+</span></button>
+                    <div class="faq-a">UAE Corporate Tax applies to financial years beginning on or after 1 June 2023.
+                        The timing of your first tax period and filing deadline depends on your financial year-end. Most
+                        businesses with a calendar year-end had their first CT filing deadline in September 2025.
+                        Contact us to confirm your specific deadlines.</div>
+                </div>
+            </div>
+
+            <div class="faq-group">
+                <div class="faq-group-title">Accounting & Audit</div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">Is an annual audit mandatory for my UAE
+                        company?<span class="chevron">+</span></button>
+                    <div class="faq-a">Most free zone entities in the UAE are required to submit audited financial
+                        statements annually as a condition of their license renewal. Mainland LLCs are also required to
+                        maintain audited accounts under the UAE Commercial Companies Law. We can confirm the specific
+                        requirement for your entity type.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">What accounting software do you support?<span
+                            class="chevron">+</span></button>
+                    <div class="faq-a">Our team is proficient in all leading cloud accounting platforms including Xero,
+                        QuickBooks, Zoho Books, Tally, Sage, and Microsoft Dynamics. We can work within your existing
+                        software or help you migrate to a more suitable platform.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-banner section-full">
+            <h2>Still Have Questions?</h2>
+            <p>Our team is happy to answer any question specific to your business situation.</p>
+            <a href="#" class="btn-dark" onclick="showPage('contact')">Ask Us Directly</a>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-premium">
+
+        <!-- TOP CTA STRIP -->
+        <div class="footer-top-strip">
+            <div class="container footer-strip-wrap">
+
+                <div>
+                    <span class="footer-mini">Ready To Grow?</span>
+                    <h2>Speak With UAE Finance Experts Today</h2>
+                    <p>
+                        Premium support for VAT, Corporate Tax, Accounting,
+                        Audit and Business Setup.
+                    </p>
+                </div>
+
+                <a href="contact.html" class="footer-btn">Free Consultation</a>
+
+            </div>
+        </div>
+
+        <!-- MAIN FOOTER -->
+        <div class="container footer-main-grid">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <div class="footer-logo-wrap">
+                    <img src="./pics/IMG-20260501-WA0025.jpg" alt="RR Associates">
+                    <div>
+                        <h3>RR Associates</h3>
+                        <span>FZ LLC • Financial Excellence</span>
+                    </div>
+                </div>
+
+                <p>
+                    Trusted accounting, tax and advisory specialists helping
+                    UAE businesses scale with clarity, compliance and confidence.
+                </p>
+
+                <div class="footer-badges">
+                    <span>✔ UAE Focused</span>
+                    <span>✔ Confidential</span>
+                    <span>✔ Fast Response</span>
+                </div>
+            </div>
+
+            <!-- SERVICES -->
+            <div>
+                <h4>Services</h4>
+                <a href="#">VAT Services</a>
+                <a href="#">Corporate Tax</a>
+                <a href="#">Accounting</a>
+                <a href="#">Audit</a>
+                <a href="#">Business Setup</a>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="industries.html">Industries</a>
+                <a href="blog.html">Insights</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h4>Contact</h4>
+                <a href="#">Dubai, UAE</a>
+                <a href="#">info@rrassociatesfzllc.com</a>
+                <a href="#">+971 58 193 2200</a>
+                <a href="#">Mon - Fri | 9AM - 6PM</a>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-wrap">
+
+                <p>© 2026 RR Associates FZ LLC. All Rights Reserved.</p>
+
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Sitemap</a>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
