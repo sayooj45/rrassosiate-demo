@@ -3969,10 +3969,6 @@ h4 {
    WHY CHOOSE US SECTION (PREMIUM DARK LAYOUT)
 ================================================== */
 
-/* ==================================================
-   WHY CHOOSE US SECTION (PREMIUM DARK LAYOUT)
-================================================== */
-
 .why-choose-us {
   background-color: #ffff;
   padding: 100px 0;
@@ -4499,7 +4495,7 @@ h4 {
   display: inline-block;
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--gold, #edb642);
-  color: #03080e;
+  color: #fff;
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
@@ -4591,7 +4587,7 @@ h4 {
   align-items: center;
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--gold, #edb642);
-  color: #03080e;
+  color: #fff;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
@@ -4603,7 +4599,7 @@ h4 {
 
 .partner-card-link-button:hover {
   background-color: #ffffff;
-  color: #03080e;
+  color: #fff;
 }
 
 .partner-arrow-diagonal {
@@ -4879,11 +4875,325 @@ h4 {
 }
 
 /* ==================================================
+   PREMIUM DARK BLOG SECTION
+================================================== */
+
+.dark-blog-section {
+  background-color: var(--navy); /* Matches your core dark section background */
+  padding: 100px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.blog-main-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 55px;
+  line-height: 1.2;
+}
+
+/* Responsive Blog Grid Layout */
+.blog-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+/* Premium Blog Card Structure */
+.blog-post-card {
+  background-color: var(
+    --navy3,
+    #02162d
+  ); /* Matches your deep navy internal cards */
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  overflow: hidden; /* Clips image corners cleanly to match the border radius */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Image Thumbnail Container */
+.blog-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background-color: #08294b;
+}
+
+.blog-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-post-card:hover .blog-image-wrapper img {
+  transform: scale(1.06); /* Smooth premium image zoom when card is hovered */
+}
+
+/* Overlay Category Badge */
+.blog-category-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--gold, #edb642);
+  color: #03080e;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+/* Content Area inside Card */
+.blog-card-content {
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes the 'Read More' link uniformly to the baseline */
+}
+
+.blog-meta-data {
+  margin-bottom: 12px;
+}
+
+.blog-date {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #626f7c; /* Muted corporate grey text */
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Post Typography links */
+.blog-card-content h3 {
+  margin: 0 0 14px 0;
+  line-height: 1.3;
+}
+
+.blog-title-link {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-title-link:hover {
+  color: var(--gold, #edb642); /* Turns title gold on interactive hover */
+}
+
+.blog-card-content p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #a3b8cc; /* Soft greyish blue text for enhanced description contrast */
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+/* Modern Link Button at Bottom */
+.blog-read-more-btn {
+  margin-top: auto; /* Aligns precisely on the lower margin border */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: gap 0.2s ease;
+}
+
+.blog-read-more-btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.blog-read-more-btn:hover .arrow {
+  transform: translateX(4px); /* Interactive nudge forward arrow movement */
+}
+
+/* ================= COMPREHENSIVE RESPONSIVE VIEWPORTS ================= */
+
+@media (max-width: 1024px) {
+  .blog-main-title {
+    font-size: 42px;
+    margin-bottom: 40px;
+  }
+  .blog-grid-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Drops beautifully to a 2-column layout on tablets */
+    gap: 24px;
+  }
+  .blog-title-link {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-grid-container {
+    grid-template-columns: 1fr; /* Formats into a clean vertical single column stack on mobile mobile formats */
+    gap: 28px;
+  }
+  .blog-main-title {
+    font-size: 34px;
+    margin-bottom: 35px;
+  }
+  .blog-image-wrapper {
+    height: 200px; /* Slims image container space slightly on phone displays */
+  }
+  .blog-card-content {
+    padding: 24px 20px;
+  }
+}
+
+/* ==================================================
+   UPDATED CENTERED ABOUT HERO SECTION
+================================================== */
+
+.about-hero-centered {
+  position: relative;
+  /* Retains your dark blue overlay background styling principles */
+  background: linear-gradient(rgba(0, 31, 63, 0.82), rgba(0, 31, 63, 0.88)),
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80")
+      no-repeat center center / cover;
+  padding: 180px 0 120px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Forces clean horizontal centering layout */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+/* min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(0, 31, 63, 0.82), rgba(0, 31, 63, 0.88)),
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+
+.hero-center-content {
+  max-width: 850px; /* Limits paragraph width line break thresholds precisely */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centered Tagline Accent Bar Component Lines */
+.about-hero-tag-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.about-hero-tag-wrap::before,
+.about-hero-tag-wrap::after {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 1px;
+  background-color: var(--gold, #edb642);
+}
+
+.about-hero-tag-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Premium Main Title Header */
+.about-hero-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 28px 0;
+  letter-spacing: -0.5px;
+}
+
+.about-italic-gold {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold, #edb642);
+}
+
+/* Subtext Meta Paragraph Block Styling Rules */
+.about-hero-lead {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #a3b8cc; /* Soft greyish blue layout contrast ratio */
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+}
+
+.about-hero-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ================= COMPREHENSIVE VIEWPORT RESPONSIVENESS ================= */
+
+@media (max-width: 1024px) {
+  .about-hero-centered {
+    padding: 150px 0 100px 0;
+  }
+  .about-hero-title {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-centered {
+    padding: 130px 20px 80px 20px;
+  }
+  .about-hero-title {
+    font-size: 40px;
+    line-height: 1.25;
+  }
+  .about-hero-lead {
+    font-size: 14.5px;
+    margin-bottom: 30px;
+  }
+  .about-hero-tag-wrap::before,
+  .about-hero-tag-wrap::after {
+    width: 20px; /* Shortens border vector lines slightly on mobile displays */
+  }
+}
+
+/* ==================================================
    PREMIUM TEXT-BASED EDITORIAL BLOG SECTION
 ================================================== */
 
 .dark-blog-editorial {
-  background-color: var(--navy); /* Matches your core dark background */
+  background-color: #03080e; /* Matches your core dark background */
   padding: 110px 0;
   width: 100%;
   box-sizing: border-box;
@@ -5021,5 +5331,894 @@ h4 {
   }
   .editorial-card {
     padding: 32px 20px;
+  }
+}
+
+/* ==================================================
+   HERITAGE SECTION (ONE LEGACY. TWO NATIONS.)
+================================================== */
+
+.heritage-section {
+  background-color: #f9f6f0; /* Warm premium off-white/light ivory canvas background */
+  padding: 100px 0 0 0; /* Bottom padding handled cleanly by the dark baseline strip */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Header Text Container Blocks */
+.heritage-header-block {
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.heritage-mini-tag {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.heritage-main-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #03080e; /* Deep dark contrast text */
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+}
+
+.heritage-main-title .gold-italic {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold, #edb642);
+}
+
+.heritage-subtitle {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #5c6770; /* Elegant soft slate-grey reads better on warm ivory backgrounds */
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Dual Column Layout Grid configuration */
+.heritage-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  border-top: 1px solid rgba(3, 8, 14, 0.06); /* Upper subtle separator boundary */
+}
+
+/* Base structural column properties */
+.heritage-col {
+  position: relative; /* Context parent anchor zone block for background watermarks */
+  padding: 60px 50px 80px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left to right interior line dividing card boundaries */
+.heritage-col.border-right {
+  border-right: 1px solid rgba(3, 8, 14, 0.08);
+}
+
+/* Absolute Watermark Typography Placement Styles */
+.watermark-bg {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(
+    3,
+    8,
+    14,
+    0.02
+  ); /* Extremely faint premium watermark visual trace layout */
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Column Content Typography Elements */
+.col-meta-tag {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #a3906b; /* Muted corporate light gold contrast text tone */
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+}
+
+.col-company-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #03080e;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+
+.col-location-sub {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.col-body-text {
+  position: relative;
+  z-index: 2; /* Ensures content overlays safely directly above watermark stamps */
+}
+
+.col-body-text p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #4a545e;
+  font-size: 14.5px;
+  line-height: 1.75;
+  margin: 0 0 20px 0;
+}
+
+.col-body-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline Text Navigation Anchor Links */
+.heritage-inline-link {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  margin-top: 35px;
+  display: inline-block;
+  align-self: flex-start;
+  border-bottom: 1px solid rgba(237, 182, 66, 0.4);
+  padding-bottom: 4px;
+  transition: all 0.25s ease;
+}
+
+.heritage-inline-link:hover {
+  color: #03080e;
+  border-bottom-color: #03080e;
+}
+
+/* ================= BOTTOM DARK STRIP ACCENT LAYER ================= */
+
+.heritage-dark-strip {
+  background-color: #03080e; /* Deep solid rich structural dark navy color block */
+  padding: 30px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.strip-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.strip-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.strip-quote-text {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ================= RESPONSIVE VIEWPORT BREAKPOINTS ================= */
+
+@media (max-width: 1024px) {
+  .heritage-main-title {
+    font-size: 40px;
+  }
+  .heritage-col {
+    padding: 45px 35px 65px 35px;
+  }
+  .watermark-bg {
+    font-size: 110px;
+    bottom: 25px;
+    right: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heritage-section {
+    padding-top: 70px;
+  }
+  .heritage-header-block {
+    margin-bottom: 40px;
+  }
+  .heritage-main-title {
+    font-size: 34px;
+  }
+
+  /* Collapses the grid safely into stacked single vertical layouts on mobile devices */
+  .heritage-dual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heritage-col {
+    padding: 40px 20px 50px 20px;
+  }
+
+  .heritage-col.border-right {
+    border-right: none;
+    border-bottom: 1px solid rgba(3, 8, 14, 0.08); /* Re-orients line divider horizontaly */
+  }
+
+  .watermark-bg {
+    font-size: 90px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .strip-line {
+    display: none; /* Drops vectors to keep mobile viewport calculations centered safely */
+  }
+  .strip-quote-text {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+}
+
+/* ==================================================
+   VISION & MISSION SYSTEM PREMIUM DARK STYLES
+================================================== */
+
+.vision-mission-section {
+  background-color: var(
+    --navy
+  ); /* Core rich dark executive background theme tint */
+  padding: 120px 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Header Elements Typography */
+.v-m-header-wrap {
+  text-align: center;
+  margin-bottom: 70px;
+  width: 100%;
+}
+
+.v-m-mini-tag {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.v-m-main-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.v-m-main-title .gold-ampersand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold, #edb642);
+}
+
+/* Side-by-Side Dual Matrix Grid Setup */
+.v-m-grid-system {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04); /* Subdued external bounding box line */
+}
+
+/* Card Column Block Wrappers */
+.v-m-card {
+  position: relative; /* Context standard base coordinate tracking for back watermarks */
+  padding: 70px 60px;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Internal Center Split Divider Line */
+.v-m-card.border-divider {
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Large Low-Contrast Backdrop Serif Tokens */
+.v-m-watermark {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 220px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.015); /* Faint visual waterstamp asset style */
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Text Content Structuring Rules */
+.v-m-accent-line {
+  width: 35px;
+  height: 2px;
+  background-color: var(--gold, #edb642);
+  margin-bottom: 24px;
+}
+
+.v-m-block-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 28px 0;
+}
+
+.v-m-body-paragraphs {
+  position: relative;
+  z-index: 2; /* Forces copy to safely layer explicitly over the top of backgrounds */
+}
+
+.v-m-body-paragraphs p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #8fa0b0; /* Clean medium-contrast readable text alignment */
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+}
+
+.v-m-body-paragraphs p:last-child {
+  margin-bottom: 0;
+}
+
+/* Premium Contrast Emphasis Class for Initial Statements */
+.v-m-body-paragraphs p.highlight-text {
+  color: #e1e7ec; /* Higher text color tier for key summaries */
+  font-size: 15.5px;
+}
+
+/* ================= COMPREHENSIVE RE-FLOW RESPONSIVENESS ================= */
+
+@media (max-width: 1024px) {
+  .v-m-main-title {
+    font-size: 42px;
+  }
+  .v-m-card {
+    padding: 55px 40px;
+  }
+  .v-m-watermark {
+    font-size: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-mission-section {
+    padding: 80px 0;
+  }
+  .v-m-header-wrap {
+    margin-bottom: 45px;
+  }
+  .v-m-main-title {
+    font-size: 34px;
+  }
+
+  /* Collapses side-by-side matrices into clean stacked presentation modules on mobile screens */
+  .v-m-grid-system {
+    grid-template-columns: 1fr;
+    border: none; /* Strip box outlines to rely on natural padding space elements */
+  }
+
+  .v-m-card {
+    padding: 40px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    margin-bottom: 20px;
+  }
+
+  .v-m-card.border-divider {
+    border-right: 1px solid rgba(255, 255, 255, 0.04); /* Equalized border blocks uniform stack arrays */
+  }
+
+  .v-m-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .v-m-watermark {
+    font-size: 130px;
+    bottom: -10px;
+    right: 10px;
+  }
+}
+
+/* ==================================================
+   CORE VALUES MODULE LIGHT IVORY STYLES
+================================================== */
+
+.values-section {
+  background-color: #f9f6f0; /* Matches the warm ivory/bone light background canvas */
+  padding: 120px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header Alignment Wrap */
+.values-header-wrap {
+  text-align: left;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.values-mini-tag {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.values-main-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #03080e; /* High contrast structural dark header text */
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.values-main-title .gold-italic {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold, #edb642);
+}
+
+/* The fluid 3-Column Card Matrix Grid system layout */
+.values-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /* Precise gap separation between individual content blocks */
+  width: 100%;
+}
+
+/* Individual Card Blocks Structural Assembly */
+.value-card {
+  background-color: #ffffff; /* Crisp stark clean white inner layout card box */
+  padding: 50px 40px 45px 40px;
+  box-sizing: border-box;
+  border: 1px solid rgba(3, 8, 14, 0.04); /* Subdued perimeter boundary line */
+  box-shadow: 0 4px 20px rgba(3, 8, 14, 0.015); /* Soft professional shadow depth */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px); /* Clean elegant elevate interaction accent */
+  box-shadow: 0 12px 30px rgba(3, 8, 14, 0.04);
+}
+
+/* Special Active Featured First-Card Top Gold Line Border Highlight */
+.value-card.active-accent {
+  border-top: 3px solid var(--gold, #edb642);
+}
+
+/* Low-Contrast Backdrop Numerical Tracking Tokens */
+.value-card-num {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 42px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(
+    237,
+    182,
+    66,
+    0.25
+  ); /* Faint elegant gold numeric reference line stamp */
+  line-height: 1;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.value-card-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #03080e;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.2px;
+}
+
+.value-card-body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #5c6770; /* Soft slate readability gray copy tone styling */
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ================= COMPREHENSIVE VIEWPORT RESPONSIVENESS ================= */
+
+@media (max-width: 1100px) {
+  /* Re-maps grid layout system automatically into a balanced 2-Column row array on standard tablets */
+  .values-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .values-main-title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .values-section {
+    padding: 80px 0;
+  }
+  .values-header-wrap {
+    margin-bottom: 40px;
+  }
+  .values-main-title {
+    font-size: 34px;
+  }
+
+  /* Flattens the array safely down to a clean singular stack layout framework on phones */
+  .values-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .value-card {
+    padding: 40px 30px;
+  }
+
+  .value-card-num {
+    font-size: 36px;
+    margin-bottom: 18px;
+  }
+
+  .value-card-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+}
+
+/* ==================================================
+   OUR APPROACH MODULE STYLES
+================================================== */
+
+.approach-section {
+  background-color: var(--navy); /* Matches the warm luxury ivory canvas base */
+  padding: 120px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Master Split Layout Matrix Grid */
+.approach-split-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Left content takes up slightly more room */
+  gap: 80px;
+  align-items: start;
+  width: 100%;
+}
+
+/* Header Content Elements Formatting */
+.approach-header-wrap {
+  margin-bottom: 45px;
+}
+
+.approach-mini-tag {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--gold, #edb642);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.approach-main-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+}
+
+.approach-main-title .gold-italic {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold, #edb642);
+}
+
+.approach-lead-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #5c6770;
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 580px;
+}
+
+/* Process Array Elements List Styling */
+.approach-steps-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.approach-step-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 35px 0;
+  border-top: 1px solid rgba(3, 8, 14, 0.08); /* Clean dividers between rows */
+}
+
+.approach-step-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Left-positioned Numeric Token Alignment */
+.approach-step-num {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--gold, #edb642);
+  line-height: 1;
+  min-width: 50px;
+  margin-top: 2px;
+}
+
+.approach-step-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.approach-step-body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #5c6770;
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Right-Column Dark Contrast Card Construction */
+.approach-sticky-card {
+  background-color: var(
+    --navy2
+  ); /* High-contrast core corporate dark card fill */
+  border-left: 3px solid var(--gold, #edb642); /* Signature gold accent strip edge */
+  padding: 50px 45px;
+  box-sizing: border-box;
+  position: sticky; /* Card drops smoothly alongside list details as user reads */
+  top: 40px;
+}
+
+.approach-quote {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0 0 30px 0;
+}
+
+.approach-card-body p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #8fa0b0; /* Accessible low contrast slate tone */
+  font-size: 14.5px;
+  line-height: 1.75;
+  margin: 0 0 20px 0;
+}
+
+.approach-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ================= COMPREHENSIVE VIEWPORT RESPONSIVENESS ================= */
+
+@media (max-width: 1100px) {
+  .approach-split-layout {
+    gap: 40px;
+  }
+  .approach-sticky-card {
+    padding: 40px 30px;
+  }
+  .approach-main-title {
+    font-size: 42px;
+  }
+  .approach-quote {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Converts side-by-side splits into a single top-to-bottom reading sequence for medium/small viewports */
+  .approach-split-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .approach-sticky-card {
+    position: static; /* Disables fixed scroll binding logic on smaller viewports */
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .approach-section {
+    padding: 80px 0;
+  }
+  .approach-main-title {
+    font-size: 34px;
+  }
+  .approach-lead-text {
+    font-size: 14.5px;
+  }
+  .approach-step-item {
+    flex-direction: column; /* Stack details vertically beneath numbers on narrow phones */
+    padding: 25px 0;
+  }
+  .approach-step-num {
+    margin-bottom: 10px;
+  }
+}
+
+/* ==================================================
+   FINAL CALL-TO-ACTION (CTA) SECTION STYLES
+================================================== */
+
+.ready-cta-section {
+  background-color: #f9f6f0; /* Deep core premium corporate dark canvas background */
+  padding: 100px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Ensures perfect fluid center alignment for all nested content */
+  position: relative;
+  overflow: hidden;
+}
+
+.ready-cta-content {
+  max-width: 800px; /* Restricts layout width for superior typographic line lengths */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ready-cta-title {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--navy); /* High contrast bright title typography text line */
+  font-size: 44px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.ready-cta-title .gold-italic {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(
+    --gold,
+    #edb642
+  ); /* Signature branding asset color focus highlight */
+}
+
+.ready-cta-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #a3b3c2; /* Soft muted legible text tone */
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+}
+
+/* Singular Button Component Wrapping Engine Block */
+.ready-action-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Premium Primary Solid Gold Action Button Element Link styling */
+.btn-explore-services {
+  display: inline-block;
+  background-color: var(
+    --gold,
+    #c1922e
+  ); /* Rich golden solid base tone color map */
+  color: #ffffff; /* Crisp stark white text color readability mask */
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 18px 42px;
+  text-decoration: none;
+  border-radius: 0; /* Keeps signature sharp corporate border-box aesthetics */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(193, 146, 46, 0.15);
+}
+
+/* Elegant Action Interaction Hover Transitions */
+.btn-explore-services:hover {
+  background-color: #a67c22; /* Gently darkened gold shade state shift */
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(193, 146, 46, 0.25);
+}
+
+.btn-explore-services:active {
+  transform: translateY(0);
+}
+
+/* ================= COMPREHENSIVE VIEWPORT RESPONSIVENESS ================= */
+
+@media (max-width: 768px) {
+  .ready-cta-section {
+    padding: 80px 0;
+  }
+
+  .ready-cta-title {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .ready-cta-text {
+    font-size: 14.5px;
+    margin-bottom: 30px;
+  }
+
+  /* Expands button slightly to provide comfortable tap space targets on mobile screens */
+  .btn-explore-services {
+    width: 100%;
+    max-width: 320px; /* Clean look on narrow layout formats */
+    padding: 16px 30px;
+    font-size: 12.5px;
+    box-sizing: border-box;
   }
 }
