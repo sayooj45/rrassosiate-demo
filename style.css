@@ -57,7 +57,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1001;
+  z-index: 2002; /* Stacked clearly above header wrapper frames */
 }
 
 .banner-left,
@@ -105,7 +105,7 @@ body {
 }
 
 /* Responsive design for smaller screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .top-banner {
     flex-direction: column;
     align-items: center;
@@ -132,16 +132,16 @@ body {
   .phone,
   .partner-text {
     word-break: break-word;
-  }
+  } */
 
-  .header {
+/* .header {
     top: 78px;
-  }
+  } */
 
-  .hero {
+/* .hero {
     padding-top: 180px;
   }
-}
+} */
 
 img {
   max-width: 100%;
@@ -236,7 +236,7 @@ h4 {
 }
 
 /* ================= HEADER ================= */
-.header {
+/* .header {
   position: fixed;
   top: 0;
   left: 0;
@@ -245,7 +245,7 @@ h4 {
   background: rgba(0, 31, 63, 0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
+} */
 
 .nav-wrap {
   height: 82px;
@@ -265,7 +265,6 @@ h4 {
   width: 38px;
   height: 38px;
   object-fit: cover;
-  /* border-radius: 12px; */
 }
 
 .logo-text h3 {
@@ -1484,7 +1483,7 @@ h4 {
 
 /* Button Component */
 .cta-banner .btn-dark {
-  background-color: #cca44c; /* Specific warm golden-mustard shade */
+  background-color: var(--gold); /* Specific warm golden-mustard shade */
   color: #121e36; /* Dark navy text */
   text-decoration: none;
   font-size: 14px;
@@ -1691,6 +1690,128 @@ h4 {
   .cta-banner.section-full {
     padding: 45px 24px;
     margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ensure the top banner handles wrapping cleanly */
+  .top-banner {
+    padding: 8px 12px;
+    font-size: 11px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .banner-left,
+  .banner-right {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Hide minor separators on mobile to save horizontal space */
+  .top-banner .separator,
+  .top-banner .vertical-pipe {
+    display: none;
+  }
+
+  /* Keep the header positioned fluidly below the top banner */
+  .header {
+    position: absolute; /* Changes from fixed to absolute on mobile to prevent content clipping */
+    top: auto; /* Clears the hardcoded pixel restrictions */
+    left: 0;
+    width: 100%;
+    background: rgba(
+      0,
+      31,
+      63,
+      0.96
+    ); /* Slightly more solid background for legible reading text overlap */
+    padding: 12px 0;
+  }
+
+  /* Allow the navigation wrapper to grow naturally with its child text elements */
+  .nav-wrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .logo-text h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .logo-text p {
+    font-size: 10px;
+    margin: 0;
+  }
+
+  /* Give the links a neat, clickable layout grid */
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 4px 0;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .nav-links a.active {
+    background: #cca44c;
+    color: #0d2e6b;
+  }
+
+  /* Button scales down seamlessly */
+  .glow-button {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+
+  /* Pushes the hero body down safely so the fluid text blocks never overflow behind the banner canvas */
+  .blog-hero,
+  .hero {
+    padding-top: 260px !important;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
   }
 }
 
@@ -2283,7 +2404,7 @@ h4 {
   } */
 }
 
-.blog-hero {
+/* .blog-hero {
   min-height: 88vh;
   padding-top: 130px;
   display: flex;
@@ -2320,7 +2441,7 @@ h4 {
   font-size: 18px;
   line-height: 1.9;
   color: #d7dfe8;
-}
+} */
 
 /* main */
 
@@ -2365,47 +2486,47 @@ h4 {
 
 /* grid */
 
-.blog-grid {
+/* .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
-}
+} */
 
 /* card */
 
-.blog-card {
+/* .blog-card {
   background: #fff;
   border: 1px solid #edf1f5;
   border-radius: 26px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
   transition: 0.35s ease;
-}
+} */
 
-.blog-card:hover {
+/* .blog-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 24px 44px rgba(0, 0, 0, 0.08);
-}
+} */
 
-.blog-thumb {
+/* .blog-thumb {
   height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 58px;
   background: linear-gradient(135deg, #001f3f, #0b2c53);
-}
+} */
 
-.blog-hero-inner .section-tag {
+/* .blog-hero-inner .section-tag {
   background-color: var(--gold);
   color: var(--navy);
-}
+} */
 
-.blog-body {
+/* .blog-body {
   padding: 30px;
-}
+} */
 
-.blog-meta {
+/* .blog-meta {
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -2436,7 +2557,7 @@ h4 {
   line-height: 1.85;
   color: var(--text);
   margin-bottom: 22px;
-}
+} */
 
 .blog-read {
   font-weight: 700;
@@ -2449,7 +2570,7 @@ h4 {
 
 /* newsletter */
 
-.blog-newsletter {
+/* .blog-newsletter {
   margin-top: 80px;
   padding: 60px;
   border-radius: 30px;
@@ -2470,9 +2591,9 @@ h4 {
   line-height: 1.9;
   color: #d7dfe8;
   font-size: 17px;
-}
+} */
 
-.newsletter-form {
+/* .newsletter-form {
   max-width: 680px;
   margin: auto;
   display: flex;
@@ -2503,53 +2624,19 @@ h4 {
 
 .newsletter-form button:hover {
   transform: translateY(-3px);
-}
+} */
 
 /* responsive */
 
 @media (max-width: 1150px) {
-  .blog-grid {
+  /* .blog-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
 
-  .blog-hero h1,
+  /* .blog-hero h1,
   .blog-newsletter h3 {
     font-size: 52px;
-  }
-}
-
-@media (max-width: 768px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .blog-hero,
-  .dark {
-    background-attachment: scroll;
-  }
-
-  .blog-hero h1,
-  .blog-newsletter h3 {
-    font-size: 40px;
-  }
-
-  .blog-content {
-    padding: 80px 0;
-  }
-
-  .blog-newsletter {
-    padding: 40px 24px;
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-  }
-
-  .newsletter-form input,
-  .newsletter-form button {
-    width: 100%;
-    height: 54px;
-  }
+  } */
 }
 
 /* ==================================================
@@ -6573,7 +6660,7 @@ h4 {
 
 /* Small Upper Tracking Label */
 .sectors-tag {
-  color: #cca44c; /* Warm gold accent tone */
+  color: var(--gold); /* Warm gold accent tone */
   font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
@@ -6598,7 +6685,7 @@ h4 {
 .highlight-italic {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
-  color: #cca44c; /* Matches tag color precisely */
+  color: var(--gold); /* Matches tag color precisely */
   font-weight: 500;
 }
 
@@ -6654,7 +6741,7 @@ h4 {
 }
 
 .section-tag {
-  color: #cca44c;
+  color: var(--gold);
   font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
@@ -6687,7 +6774,9 @@ h4 {
 
 /* Premium Card Main Block */
 .ind-card {
-  background-color: #0b2554; /* Solid Deep Blue Container from Screenshot */
+  background-color: var(
+    --ny--navy
+  ); /* Solid Deep Blue Container from Screenshot */
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -6758,7 +6847,7 @@ h4 {
 /* Refined Outline Chip Badges */
 .ind-tag-chip {
   font-family: "Inter", sans-serif;
-  color: #cca44c; /* Warm gold text */
+  color: var(--gold); /* Warm gold text */
   font-size: 11px;
   font-weight: 500;
   padding: 6px 12px;
@@ -6790,5 +6879,1450 @@ h4 {
 
   .ind-card-image {
     height: 180px;
+  }
+}
+
+/* Blog Page Hero Background Canvas */
+.blog-hero {
+  background: linear-gradient(rgba(0, 31, 63, 0.84), rgba(0, 31, 63, 0.9)),
+    url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80");
+  padding: 200px 20px 80px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* min-height: 88vh;
+  padding-top: 130px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 31, 63, 0.84), rgba(0, 31, 63, 0.9)),
+    url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+
+/* Central Real Estate Alignment Shell */
+.blog-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mini Tracking Label Upper Metadata Tag */
+.blog-hero .sectors-tag {
+  color: var(--gold); /* Golden contrast accent */
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+/* Premium Typography Heading Layout */
+.blog-hero .hero-heading {
+  color: #ffffff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Script Style Accent */
+.blog-hero .highlight-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* Paragraph copy blocks descriptive metrics */
+.blog-hero .hero-subtext {
+  color: #a4b7d3; /* Soft blue-grey mix optimized for screen readability */
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 660px;
+  margin: 0 auto 40px auto;
+  font-weight: 400;
+}
+
+/* Filter Buttons Outer Flexible Base Track */
+.hero-filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Capsule Form Filter Element Styling */
+.blog-tag-btn {
+  background: transparent;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Muted borders match screen context */
+  border-radius: 30px; /* Perfect rounded capsule style */
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+/* Hover Interactivity Response */
+.blog-tag-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background-color: rgba(204, 164, 76, 0.05);
+}
+
+/* Selected/Active Filter Button Core Highlights */
+.blog-tag-btn.active {
+  background-color: var(--gold) !important; /* Solid gold filler */
+  color: #0d2e6b !important; /* Dark text overlay matches canvas theme color */
+  border-color: var(--gold) !important;
+  font-weight: 600;
+}
+
+/* Content Area Base Spacing adjustments */
+.blog-content {
+  padding: 60px 20px;
+  /* background-color: #f8fafc; */
+}
+
+/* --- Responsive Media Scale Viewports --- */
+
+@media (max-width: 768px) {
+  .blog-hero {
+    padding: 150px 20px 60px 20px;
+  }
+
+  .blog-hero .hero-heading {
+    font-size: 38px;
+  }
+
+  .blog-hero .hero-subtext {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .blog-tag-btn {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-hero {
+    padding: 170px 16px 50px 16px;
+  }
+
+  .blog-hero .hero-heading {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-filter-container {
+    gap: 8px;
+  }
+}
+
+/* Featured Section External Canvas Box Wrapper */
+.featured-article-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Featured Card Root Layout Structure */
+.featured-card {
+  background-color: var(
+    --navy
+  ); /* Matching your uniform deep royal blue brand canvas */
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  min-height: 440px;
+  box-shadow: 0 12px 40px rgba(13, 46, 107, 0.12);
+}
+
+/* Left Half: Responsive Visual Container */
+.featured-image-box {
+  flex: 1;
+  width: 50%;
+  position: relative;
+  min-height: 100%;
+}
+
+.featured-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Half: Precise Layout Copy Field */
+.featured-content-box {
+  flex: 1;
+  width: 50%;
+  padding: 48px 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Top Mini Metadata Bar Row */
+.featured-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+/* Golden Mustard Structural Capsule Badge */
+.featured-badge {
+  background-color: var(--gold);
+  color: #0d2e6b;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+.featured-date {
+  color: #7994c1;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Main Post Title Typography Styling */
+.featured-title {
+  color: #ffffff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.2px;
+}
+
+/* Article Body Excerpt Copy */
+.featured-excerpt {
+  color: #a4b7d3;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0 0 32px 0;
+  font-weight: 400;
+}
+
+/* Profile Metadata Footer Container */
+.featured-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto; /* Guarantees footer sticks neat at the bottom margin edge */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+}
+
+/* Author Profiler Layout Group */
+.author-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Rounded Profile Monogram Initials Icon */
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--gold);
+  color: #0d2e6b;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.author-name {
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.author-meta {
+  color: #7994c1;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+
+/* Interactive Text Link Actions */
+.read-article-link {
+  color: var(--gold);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.read-article-link:hover {
+  color: #dbae53;
+}
+
+.link-arrow {
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.read-article-link:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+/* --- Media Queries for Seamless Responsiveness --- */
+
+/* Medium Layout Screens (Tablets / Small Notebooks) */
+@media (max-width: 992px) {
+  .featured-content-box {
+    padding: 36px 40px;
+  }
+
+  .featured-title {
+    font-size: 26px;
+  }
+}
+
+/* Compact Mobile Screens Layout Transformations */
+@media (max-width: 768px) {
+  .featured-card {
+    flex-direction: column; /* Convert standard horizontal desktop split to uniform grid stack vertical */
+    min-height: auto;
+  }
+
+  .featured-image-box {
+    width: 100%;
+    height: 260px; /* Locked fixed portrait field box on mobile viewports */
+  }
+
+  .featured-content-box {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  .featured-title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .featured-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .read-article-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: rgba(204, 164, 76, 0.06);
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+}
+
+/* Blog Card Grid Grid Layout Matrix */
+.blog-grid {
+  max-width: 1200px;
+  margin: 40px auto 80px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Individual Premium Blog Card Base Frame */
+.blog-card {
+  background-color: var(
+    --navy
+  ); /* Solid premium dark blue matching screenshot exactly */
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(11, 37, 84, 0.06);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(11, 37, 84, 0.15);
+}
+
+/* Responsive Image Display Block */
+.blog-card-image {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Typography Copy & Metadata Padding Shell */
+.blog-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Metadata Category & Timeline Row */
+.blog-card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Mini Tag Pill Badges Framework */
+.blog-card-badge {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* Category Color Palettes Matching Reference Screen Styles */
+.badge-accounting {
+  background-color: rgba(45, 136, 121, 0.15);
+  color: #49c4b0; /* Mint Teal */
+}
+
+.badge-vat {
+  background-color: rgba(204, 164, 76, 0.15);
+  color: var(--gold); /* Accent Gold */
+}
+
+.badge-tax {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60a5fa; /* Light Blue */
+}
+
+.badge-aml {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: #a78bfa; /* Violet */
+}
+
+.badge-setup {
+  background-color: rgba(234, 88, 12, 0.15);
+  color: #fb923c; /* Warm Orange */
+}
+
+/* Date Accent Typography */
+.blog-card-date {
+  font-family: "Inter", sans-serif;
+  color: #7994c1;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Primary Article Headline Title Style */
+.blog-card-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.1px;
+}
+
+/* Article Abstract Snippet Style */
+.blog-card-body p {
+  font-family: "Inter", sans-serif;
+  color: #9cb1d6;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  flex-grow: 1; /* Guarantees card footers automatically align neatly at the base margin */
+}
+
+/* Footer Section Grid Divider line */
+.blog-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.blog-author {
+  font-family: "Inter", sans-serif;
+  color: #7994c1;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Interactive Text Links Styling */
+.blog-read-link {
+  font-family: "Inter", sans-serif;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.blog-read-link:hover {
+  color: #dbae53;
+}
+
+.read-arrow {
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.blog-read-link:hover .read-arrow {
+  transform: translateX(3px);
+}
+
+/* --- Media Queries for Flawless Responsiveness --- */
+
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 Column configuration for Tablet layouts */
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .blog-grid {
+    grid-template-columns: 1fr; /* Full-width single column cards stack for Smart Phones */
+    padding: 0 16px;
+    margin-bottom: 50px;
+  }
+
+  .blog-card-image {
+    height: 190px;
+  }
+}
+
+/* Newsletter External Block Container */
+.blog-newsletter-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Master Inner Canvas Box Frame Styling */
+.newsletter-inner-wrap {
+  background-color: var(
+    --navy
+  ); /* Solid corporate deep blue matching screenshot precisely */
+  border-radius: 16px;
+  padding: 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 10px 30px rgba(13, 46, 107, 0.08);
+}
+
+/* Left Typography Column Alignment */
+.newsletter-text-side {
+  flex: 1;
+  text-align: left;
+}
+
+.newsletter-text-side h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+.newsletter-text-side p {
+  font-family: "Inter", sans-serif;
+  color: #a4b7d3; /* Soft blue-grey mix optimized for readability */
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Right Content Inline Form Layout Component */
+.newsletter-form-side {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-inline-form {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Deep Muted Blue Form Input Frame Styling */
+.newsletter-input-field {
+  width: 280px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 0 18px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.newsletter-input-field:focus {
+  border-color: var(--gold);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* Premium Gold Action Button Layout Styling */
+.newsletter-submit-btn {
+  height: 48px;
+  background-color: var(--gold); /* Gold brand fill */
+  color: #0d2e6b; /* Dark navy text matching reference screen */
+  border: none;
+  border-radius: 6px;
+  padding: 0 28px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.newsletter-submit-btn:hover {
+  background-color: var(--gold2);
+}
+
+.newsletter-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* --- Responsive Media Scale Viewport Breaking points --- */
+
+/* Medium Screen Layout (Small Laptops / Tablets) */
+@media (max-width: 992px) {
+  .newsletter-inner-wrap {
+    padding: 36px;
+    gap: 30px;
+  }
+
+  .newsletter-text-side h3 {
+    font-size: 26px;
+  }
+
+  .newsletter-input-field {
+    width: 220px;
+  }
+}
+
+/* Compact Mobile Screen Vertical Layout Transformations */
+@media (max-width: 768px) {
+  .newsletter-inner-wrap {
+    flex-direction: column; /* Transforms wide layout into a vertical container grid stack */
+    align-items: stretch;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .newsletter-text-side {
+    text-align: center;
+  }
+
+  .newsletter-text-side h3 {
+    font-size: 24px;
+  }
+
+  .newsletter-form-side,
+  .newsletter-inline-form {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-input-field {
+    width: 100%;
+    text-align: center; /* Centers placeholder text elements for look symmetry on mobile devices */
+  }
+
+  .newsletter-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* External Canvas Layout Box Margin Spacing */
+.finance-cta-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Master Premium Card Flex Shell Base */
+.finance-cta-card {
+  background-color: var(
+    --navy
+  ); /* Solid premium deep brand blue matching screenshot exactly */
+  border-radius: 16px;
+  padding: 56px 40px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(11, 37, 84, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Central Block Content Core Matrix */
+.finance-cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headline Hero Core Typography */
+.finance-cta-title {
+  color: #ffffff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.2px;
+}
+
+/* Descriptive Abstract Callout Metrics */
+.finance-cta-subtext {
+  color: #a4b7d3; /* Soft blue-grey mix optimized for premium contrast */
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+  font-weight: 400;
+}
+
+/* Interactive Action Buttons Structural Box Wrapper */
+.finance-cta-action-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Solid Brand Gold Filled Button Element Component */
+.finance-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: #cca44c; /* Gold brand fill matching visual mockups */
+  color: #0d2e6b; /* Solid dark text contrast matching reference layout image */
+  font-family: "Inter", sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 36px;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(204, 164, 76, 0.15);
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.finance-cta-button:hover {
+  background-color: #dbae53;
+}
+
+.finance-cta-button:active {
+  transform: scale(0.98);
+}
+
+/* --- Responsive Media Viewport Breaks Framework --- */
+
+/* Medium Layout Screens (Tablets / Notebook Frameworks) */
+@media (max-width: 768px) {
+  .finance-cta-card {
+    padding: 44px 28px;
+    margin: 0 8px;
+  }
+
+  .finance-cta-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .finance-cta-subtext {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .finance-cta-button {
+    padding: 0 28px;
+    font-size: 14px;
+    height: 46px;
+  }
+}
+
+/* Ultra-Compact Smartphone Displays Viewport Scale Layout */
+@media (max-width: 480px) {
+  .finance-cta-card {
+    padding: 36px 20px;
+    border-radius: 12px;
+  }
+
+  .finance-cta-title {
+    font-size: 24px;
+  }
+
+  .finance-cta-button {
+    width: 100%; /* Spans full horizontal scale for thumb accessibility targets */
+    box-sizing: border-box;
+  }
+}
+
+/* ================= GLOBAL DESKTOP HEADER LAYOUT ================= */
+.header {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100% !important; /* Forces layout tracking across devices */
+  z-index: 2000;
+  background: rgba(0, 31, 63, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+}
+
+/* Flex Container Wrapper - Corrected for authentic 100% edge-to-edge layout tracking */
+.nav-container {
+  width: 100% !important; /* Overrides any narrow default layout limits */
+  max-width: 100% !important; /* Breaks the block out of centered constraints */
+  height: 85px;
+  margin: 0; /* Eliminates the centered auto-margin block behavior */
+  padding: 0 40px; /* Generates professional breathing space on far ends */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Securely pins Logo to far left and Action button to far right */
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Branding Alignment Group */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  z-index: 2100;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text h3 {
+  color: #ffffff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logo-text p {
+  color: #cca44c;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 2px 0 0 0;
+}
+
+/* Desktop Inline Link Strip Layout Elements */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-item {
+  color: #a4b7d3;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #cca44c;
+}
+
+/* Action Utility Component Box */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 2100;
+}
+
+/* Navigation Utilities Display States */
+.mobile-only {
+  display: none !important;
+}
+
+/* Hamburger UI Toggle Structural Button Blueprint */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* ================= MOBILE VIEWPORTS RESPONSIVE BREAKPOINT ================= */
+@media (max-width: 768px) {
+  .header {
+    top: 50px;
+  }
+  .nav-container {
+    height: 70px; /* Snug height framework optimized for smaller device rows */
+    padding: 0 20px;
+  }
+
+  .logo-img {
+    height: 38px; /* Clean size drop preventing overflow wrapping */
+  }
+
+  .logo-text h3 {
+    font-size: 17px;
+  }
+
+  /* Visibility Display Value Shifts */
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: inline-flex !important;
+  }
+
+  /* Activate Hamburger Trigger Display */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Structural Slide-Down Drawer Overrides */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #001f3f; /* Deep brand uniform dark blue fill */
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+    gap: 0;
+    box-sizing: border-box;
+    border-bottom: 3px solid #cca44c;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+    /* Animation Hidden Initial Parameters */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* Open State Multiplier */
+  .nav-links.mobile-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Navigation Link Rows Padding inside Mobile Context Drawer */
+  .nav-item {
+    padding: 14px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 15px;
+  }
+
+  .nav-links .glow-button.mobile-only {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Hamburger to Morph 'X' Transition */
+  .menu-toggle.active .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background-color: #cca44c;
+  }
+
+  .menu-toggle.active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background-color: #cca44c;
+  }
+
+  /* Safe Offset for Top Hero Section Text Canvas Core */
+  .hero,
+  .blog-hero {
+    padding-top: 140px !important;
+  }
+}
+
+/* ================= DESKTOP BASE CONFIGURATIONS ================= */
+.top-banner {
+  background-color: #111111;
+  color: #888888;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed; /* Kept fixed to top of viewport */
+  top: 0;
+  left: 0;
+  z-index: 2002;
+}
+
+.banner-left,
+.banner-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.separator {
+  color: #666666;
+  margin: 0 4px;
+}
+
+.vertical-pipe {
+  color: #444444;
+  margin: 0 15px;
+  font-weight: 300;
+}
+
+.top-banner a {
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.top-banner a:hover {
+  opacity: 0.8;
+}
+
+.email,
+.phone,
+.partner-name {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.country-code {
+  font-weight: bold;
+  margin-right: 4px;
+  font-size: 9px;
+}
+
+.partner-text {
+  color: var(--gold);
+}
+
+.header {
+  position: fixed;
+  top: 40px; /* Sits flush beneath the single-line desktop top-banner */
+  left: 0;
+  width: 100% !important;
+  z-index: 2000;
+  background: rgba(0, 31, 63, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  transition: top 0.2s ease; /* Smooth layout shift adjustment */
+}
+
+.nav-container {
+  max-width: 1200px;
+  height: 85px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  z-index: 2100;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text h3 {
+  color: #ffffff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logo-text p {
+  color: var(--gold);
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 2px 0 0 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-item {
+  color: #a4b7d3;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: var(--gold);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 2100;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-only {
+  display: inline-flex !important;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* ================= 2. TABLET RESPONSIVE BREAKPOINT (780px down to 481px) ================= */
+/* =========================================================================
+   CLEAN RESPONSIVE LAYOUT (FOR ALL TABLETS & PHONES LESS THAN 780px)
+   ========================================================================= */
+@media (max-width: 780px) {
+  /* 1. Turn off fixed positions so elements stack naturally in the document flow */
+  .top-banner {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 14px 16px !important;
+    text-align: center !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Let the main header sit naturally directly underneath the top banner */
+  .header {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    background: #001f3f !important; /* solid deep dark blue fill background */
+    box-sizing: border-box !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin-top: -1px;
+  }
+
+  /* 3. Handle data elements cleanly on mobile viewports */
+  .banner-left,
+  .banner-right {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .vertical-pipe,
+  .separator {
+    display: none !important; /* Hides horizontal bars that cause clipping bugs */
+  }
+
+  .email,
+  .phone,
+  .partner-text {
+    word-break: break-all !important; /* Prevents text from extending past the viewport edge */
+    text-align: center !important;
+    font-size: 11px !important;
+  }
+
+  .nav-container {
+    height: 70px !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+
+  .logo-img {
+    height: 36px !important; /* Scaled slightly down to save row real estate */
+    width: auto !important;
+  }
+
+  .logo-text h3 {
+    font-size: 16px !important;
+    margin: 0 !important;
+  }
+
+  .logo-text p {
+    font-size: 8.5px !important;
+    margin: 2px 0 0 0 !important;
+  }
+
+  /* 4. Dropdown Drawer Overlay Navigation Framework */
+  .nav-links {
+    position: absolute !important;
+    top: 70px !important; /* Sits precisely below the 70px height nav-container */
+    left: 0 !important;
+    width: 100% !important;
+    background: #001f3f !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 20px !important;
+    gap: 0 !important;
+    box-sizing: border-box !important;
+    border-bottom: 3px solid var(--gold) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 2500 !important;
+
+    /* Animation Initial Values */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav-links.mobile-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  .nav-item {
+    padding: 12px 0 !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    font-size: 14px !important;
+    display: block !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: inline-flex !important;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  .nav-links .glow-button.mobile-only {
+    margin-top: 16px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Hamburger Interaction Micro-Animations */
+  .menu-toggle.active .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+    background-color: var(--gold) !important;
+  }
+
+  .menu-toggle.active .hamburger-bar:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .menu-toggle.active .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+    background-color: var(--gold) !important;
+  }
+
+  /* 5. REMOVE ABSOLUTE PADDING GAP: Elements drop naturally into place */
+  .hero,
+  .blog-hero {
+    padding-top: 40px !important; /* Low padding value since header is no longer floating */
+  }
+}
+
+/* =========================================================================
+   ULTRA-COMPACT CELLPHONES MODIFIER (FOR SCREENS LESS THAN 480px)
+   ========================================================================= */
+@media (max-width: 480px) {
+  .top-banner {
+    padding: 12px 10px !important; /* Tighter padding metrics for small displays */
+  }
+  .header {
+    margin-bottom: -1px;
+  }
+
+  .nav-container {
+    height: 60px !important; /* Compact navbar framework */
+  }
+
+  .logo-img {
+    height: 30px !important;
+  }
+
+  .logo-text h3 {
+    font-size: 14px !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  .nav-links {
+    top: 60px !important; /* Adjusted to remain flush with the smaller header container height */
+  }
+
+  /* Scales down large hero text headers so they look clean on mobile */
+  .hero h1 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero p {
+    font-size: 14px !important;
   }
 }

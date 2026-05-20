@@ -34,40 +34,60 @@
       <div class="banner-right">
         <a href="tel:+971581932200" class="phone">+971 58 193 2200</a>
         <span class="vertical-pipe">|</span>
-        <span class="partner-text"
-          ><span class="country-code">IN</span> Our India Partner:
-          <strong class="partner-name">Arun Associates</strong></span
-        >
+        <span class="partner-text">
+          <span class="country-code">IN</span> Our India Partner:
+          <strong class="partner-name">Arun Associates</strong>
+        </span>
       </div>
     </section>
 
-    <!-- ================= NAVBAR ================= -->
-    <header class="header" style="top: 40px">
-      <div class="container nav-wrap">
+    <header class="header">
+      <div class="nav-container">
         <a href="index.html" class="logo-wrap">
-          <img src="./pics/logo.png" class="logo-img" />
-
+          <img
+            src="./pics/logo.png"
+            class="logo-img"
+            alt="RR Associates Logo"
+          />
           <div class="logo-text">
             <h3>RR Associates</h3>
             <p>FZ LLC • Financial Excellence</p>
           </div>
         </a>
 
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="about.html">About</a>
-          <!-- <a href="free-zone.html">Free Zones</a> -->
-          <a class="active" href="industries.html">Industries</a>
-          <!-- <a href="blog.html">Insights</a> -->
-          <!-- <a href="careers.html">Careers</a> -->
-          <a href="contact.html">Contact</a>
+        <nav class="nav-links" id="navLinks">
+          <a class="nav-item " href="index.html">Home</a>
+          <a class="nav-item" href="about.html">About</a>
+          <a class="nav-item" href="services.html">Services</a>
+          <a class="nav-item active" href="industries.html">Industries</a>
+          <a class="nav-item" href="contact.html">Contact</a>
+
+          <a
+            href="https://arunassociatesac.com/"
+            class="glow-button mobile-only"
+          >
+            <span class="arrow-icon">↗</span> Arun Associates India
+          </a>
         </nav>
 
-        <!-- <a href="contact.html" class="btn-main">Free Consultation</a> -->
-        <a href="https://arunassociatesac.com/" class="glow-button">
-          <span class="arrow-icon">↗</span> Arun Associates India
-        </a>
+        <div class="nav-actions">
+          <a
+            href="https://arunassociatesac.com/"
+            class="glow-button desktop-only"
+          >
+            <span class="arrow-icon">↗</span> Arun Associates India
+          </a>
+
+          <button
+            class="menu-toggle"
+            aria-label="Toggle navigation"
+            onclick="toggleMobileMenu()"
+          >
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
       </div>
     </header>
 

@@ -34,40 +34,60 @@
       <div class="banner-right">
         <a href="tel:+971581932200" class="phone">+971 58 193 2200</a>
         <span class="vertical-pipe">|</span>
-        <span class="partner-text"
-          ><span class="country-code">IN</span> Our India Partner:
-          <strong class="partner-name">Arun Associates</strong></span
-        >
+        <span class="partner-text">
+          <span class="country-code">IN</span> Our India Partner:
+          <strong class="partner-name">Arun Associates</strong>
+        </span>
       </div>
     </section>
 
-    <!-- ================= NAVBAR ================= -->
-    <header class="header" style="top: 40px">
-      <div class="container nav-wrap">
+    <header class="header">
+      <div class="nav-container">
         <a href="index.html" class="logo-wrap">
-          <img src="./pics/logo.png" class="logo-img" />
-
+          <img
+            src="./pics/logo.png"
+            class="logo-img"
+            alt="RR Associates Logo"
+          />
           <div class="logo-text">
             <h3>RR Associates</h3>
             <p>FZ LLC • Financial Excellence</p>
           </div>
         </a>
 
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a class="active" href="about.html">About</a>
-          <!-- <a href="free-zone.html">Free Zones</a> -->
-          <a href="industries.html">Industries</a>
-          <!-- <a href="blog.html">Insights</a> -->
-          <!-- <a href="careers.html">Careers</a> -->
-          <a href="contact.html">Contact</a>
+        <nav class="nav-links" id="navLinks">
+          <a class="nav-item" href="index.html">Home</a>
+          <a class="nav-item" href="about.html">About</a>
+          <a class="nav-item" href="services.html">Services</a>
+          <a class="nav-item" href="industries.html">Industries</a>
+          <a class="nav-item" href="contact.html">Contact</a>
+
+          <a
+            href="https://arunassociatesac.com/"
+            class="glow-button mobile-only"
+          >
+            <span class="arrow-icon">↗</span> Arun Associates India
+          </a>
         </nav>
 
-        <!-- <a href="contact.html" class="btn-main">Free Consultation</a> -->
-        <a href="https://arunassociatesac.com/" class="glow-button">
-          <span class="arrow-icon">↗</span> Arun Associates India
-        </a>
+        <div class="nav-actions">
+          <a
+            href="https://arunassociatesac.com/"
+            class="glow-button desktop-only"
+          >
+            <span class="arrow-icon">↗</span> Arun Associates India
+          </a>
+
+          <button
+            class="menu-toggle"
+            aria-label="Toggle navigation"
+            onclick="toggleMobileMenu()"
+          >
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -76,25 +96,87 @@
       <!-- HERO -->
       <section class="blog-hero">
         <div class="blog-hero-inner">
-          <span class="section-tag">Knowledge Hub</span>
+          <span class="sectors-tag">Knowledge Hub</span>
 
-          <h1>
-            Insights &amp; <em>Financial Updates</em><br />
+          <h1 class="hero-heading">
+            Insights &amp;
+            <span class="highlight-italic">Financial Updates</span><br />
             for UAE Businesses
           </h1>
 
-          <p>
+          <p class="hero-subtext">
             Stay ahead with expert commentary on UAE tax law, Corporate Tax
             updates, VAT changes, and financial best practices from the RR
             Associates team.
           </p>
+
+          <div class="hero-filter-container">
+            <button class="blog-tag-btn active" data-filter="all">
+              All Articles
+            </button>
+            <button class="blog-tag-btn" data-filter="vat">VAT</button>
+            <button class="blog-tag-btn" data-filter="tax">
+              Corporate Tax
+            </button>
+            <button class="blog-tag-btn" data-filter="accounting">
+              Accounting
+            </button>
+            <button class="blog-tag-btn" data-filter="aml">AML</button>
+            <button class="blog-tag-btn" data-filter="setup">
+              Business Setup
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-article-section">
+        <div class="featured-card">
+          <div class="featured-image-box">
+            <img
+              src="https://i.pinimg.com/736x/2f/54/26/2f5426f5c327c5b3408d21bd5f76a25e.jpg"
+              alt="UAE Corporate Tax 2026 Layout Analysis"
+            />
+          </div>
+
+          <div class="featured-content-box">
+            <div class="featured-meta-row">
+              <span class="featured-badge">Featured</span>
+              <span class="featured-date">May 2026</span>
+            </div>
+
+            <h2 class="featured-title">
+              UAE Corporate Tax 2026: What Every Business Must Know Before
+              Filing
+            </h2>
+
+            <p class="featured-excerpt">
+              With the first full cycle of UAE Corporate Tax now underway,
+              businesses face new compliance challenges. Our experts break down
+              registration deadlines, qualifying free zone rules, transfer
+              pricing obligations, and how to avoid costly penalties this year.
+            </p>
+
+            <div class="featured-footer">
+              <div class="author-profile">
+                <div class="author-avatar">RA</div>
+                <div class="author-details">
+                  <span class="author-name">RR Associates Team</span>
+                  <span class="author-meta">Tax Advisory • 8 min read</span>
+                </div>
+              </div>
+
+              <a href="article-details.html" class="read-article-link">
+                Read Article <span class="link-arrow">→</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- CONTENT -->
       <section class="blog-content">
         <!-- FILTER -->
-        <div class="blog-filter">
+        <!-- <div class="blog-filter">
           <button class="blog-tag-btn active" data-filter="all">
             All Articles
           </button>
@@ -107,11 +189,11 @@
           <button class="blog-tag-btn" data-filter="setup">
             Business Setup
           </button>
-        </div>
+        </div> -->
 
         <!-- BLOG GRID -->
-        <div class="blog-grid">
-          <!-- ACCOUNTING -->
+        <!-- <div class="blog-grid">
+          ACCOUNTING
           <div class="blog-card" data-category="accounting">
             <div class="blog-thumb">📊</div>
             <div class="blog-body">
@@ -127,7 +209,7 @@
             </div>
           </div>
 
-          <!-- ACCOUNTING -->
+          ACCOUNTING
           <div class="blog-card" data-category="accounting">
             <div class="blog-thumb">⚙️</div>
             <div class="blog-body">
@@ -143,7 +225,7 @@
             </div>
           </div>
 
-          <!-- VAT -->
+          VAT
           <div class="blog-card" data-category="vat">
             <div class="blog-thumb">🧾</div>
             <div class="blog-body">
@@ -159,7 +241,7 @@
             </div>
           </div>
 
-          <!-- TAX -->
+          TAX
           <div class="blog-card" data-category="tax">
             <div class="blog-thumb">🏛️</div>
             <div class="blog-body">
@@ -175,7 +257,7 @@
             </div>
           </div>
 
-          <!-- ACCOUNTING -->
+          ACCOUNTING
           <div class="blog-card" data-category="accounting">
             <div class="blog-thumb">📈</div>
             <div class="blog-body">
@@ -191,7 +273,7 @@
             </div>
           </div>
 
-          <!-- AML -->
+          AML
           <div class="blog-card" data-category="aml">
             <div class="blog-thumb">🔐</div>
             <div class="blog-body">
@@ -207,7 +289,7 @@
             </div>
           </div>
 
-          <!-- BUSINESS SETUP -->
+          BUSINESS SETUP
           <div class="blog-card" data-category="setup">
             <div class="blog-thumb">🏢</div>
             <div class="blog-body">
@@ -222,10 +304,195 @@
               </p>
             </div>
           </div>
+        </div> -->
+
+        <div class="blog-grid">
+          <div class="blog-card" data-category="accounting">
+            <div class="blog-card-image">
+              <img
+                src="https://i.pinimg.com/736x/de/0c/66/de0c668e53f0393c7ec8c32aa210b7c4.jpg"
+                alt="Ultimate UAE Compliance Calendar"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta-row">
+                <span class="blog-card-badge badge-accounting">Accounting</span>
+                <span class="blog-card-date">March 2026</span>
+              </div>
+              <h3>Ultimate UAE Compliance Calendar for Businesses (2026)</h3>
+              <p>
+                Key deadlines for VAT returns, Corporate Tax filings,
+                bookkeeping reviews, and annual audit readiness all in one
+                place.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author">RR Associates</span>
+                <a href="#" class="blog-read-link"
+                  >Read <span class="read-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-category="accounting">
+            <div class="blog-card-image">
+              <img
+                src="https://i.pinimg.com/736x/29/81/e3/2981e3bccd8697f5a22d255174d74704.jpg"
+                alt="How Six Sigma Improves Finance Operations"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta-row">
+                <span class="blog-card-badge badge-accounting">Accounting</span>
+                <span class="blog-card-date">March 2026</span>
+              </div>
+              <h3>How Six Sigma Improves Finance Operations</h3>
+              <p>
+                Discover how lean systems improve reporting speed, reduce errors
+                and increase finance efficiency across UAE businesses.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author">RR Associates</span>
+                <a href="#" class="blog-read-link"
+                  >Read <span class="read-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-category="vat">
+            <div class="blog-card-image">
+              <img
+                src="https://i.pinimg.com/736x/6b/85/e6/6b85e601514c7cc95abee8b7ce46d37d.jpg"
+                alt="E-Invoicing in UAE"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta-row">
+                <span class="blog-card-badge badge-vat">VAT</span>
+                <span class="blog-card-date">February 2026</span>
+              </div>
+              <h3>E-Invoicing in UAE: Complete Guide for Companies</h3>
+              <p>
+                Understand upcoming e-invoicing changes, invoicing system
+                requirements, and how to plan for seamless compliance.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author">RR Associates</span>
+                <a href="#" class="blog-read-link"
+                  >Read <span class="read-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-category="tax">
+            <div class="blog-card-image">
+              <img
+                src="https://i.pinimg.com/736x/91/06/d5/9106d51a0197a39506568537405653f0.jpg"
+                alt="UAE 2026 Tax Updates"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta-row">
+                <span class="blog-card-badge badge-tax">Corporate Tax</span>
+                <span class="blog-card-date">January 2026</span>
+              </div>
+              <h3>UAE 2026 Tax, VAT & Corporate Tax Updates</h3>
+              <p>
+                Latest developments every UAE business owner should prepare for
+                this year to maintain flawless compliance.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author">RR Associates</span>
+                <a href="#" class="blog-read-link"
+                  >Read <span class="read-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-category="accounting">
+            <div class="blog-card-image">
+              <img
+                src="https://i1-c.pinimg.com/736x/c1/6e/fb/c16efb40a8321df21e771b64e239ae74.jpg"
+                alt="Real-Time Analytics in Finance"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta-row">
+                <span class="blog-card-badge badge-accounting">Accounting</span>
+                <span class="blog-card-date">December 2025</span>
+              </div>
+              <h3>Real-Time Analytics in Finance</h3>
+              <p>
+                How smart reporting dashboards help UAE firms make faster
+                financial decisions with concrete visual data.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author">RR Associates</span>
+                <a href="#" class="blog-read-link"
+                  >Read <span class="read-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-category="aml">
+            <div class="blog-card-image">
+              <img
+                src="https://i.pinimg.com/736x/fa/30/82/fa30827a5b95250609eda557b813f2c3.jpg"
+                alt="AML Compliance for UAE Businesses"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta-row">
+                <span class="blog-card-badge badge-aml">AML</span>
+                <span class="blog-card-date">February 2026</span>
+              </div>
+              <h3>AML Compliance for UAE Businesses</h3>
+              <p>
+                Build stronger KYC, risk controls and reporting processes to
+                avoid steep regulatory penalties.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author">RR Associates</span>
+                <a href="#" class="blog-read-link"
+                  >Read <span class="read-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-category="setup">
+            <div class="blog-card-image">
+              <img
+                src="https://i.pinimg.com/736x/d8/17/06/d8170622d1bab0e5fd8c25af20eaf8d1.jpg"
+                alt="Mainland vs Free Zone in UAE"
+              />
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta-row">
+                <span class="blog-card-badge badge-setup">Business Setup</span>
+                <span class="blog-card-date">January 2026</span>
+              </div>
+              <h3>Mainland vs Free Zone in UAE</h3>
+              <p>
+                Compare cost, ownership, taxation and expansion flexibility
+                thoroughly before you launch your startup.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-author">RR Associates</span>
+                <a href="#" class="blog-read-link"
+                  >Read <span class="read-arrow">→</span></a
+                >
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- NEWSLETTER -->
-        <div class="blog-newsletter">
+        <!-- <div class="blog-newsletter">
           <h3>Stay Informed on UAE Tax &amp; Finance</h3>
 
           <p>
@@ -237,7 +504,56 @@
             <input type="email" placeholder="Your email address" />
             <button>Subscribe</button>
           </div>
+        </div> -->
+
+        <div class="blog-newsletter-container">
+          <div class="newsletter-inner-wrap">
+            <div class="newsletter-text-side">
+              <h3>Stay Informed on UAE Tax &amp; Finance</h3>
+              <p>
+                Monthly insights, deadline reminders, and expert commentary —
+                straight to your inbox.
+              </p>
+            </div>
+
+            <div class="newsletter-form-side">
+              <form
+                class="newsletter-inline-form"
+                onsubmit="event.preventDefault();"
+              >
+                <input
+                  type="email"
+                  class="newsletter-input-field"
+                  placeholder="Your email address"
+                  required
+                />
+                <button type="submit" class="newsletter-submit-btn">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
+
+        <section class="finance-cta-section">
+          <div class="finance-cta-card">
+            <div class="finance-cta-content">
+              <h2 class="finance-cta-title">
+                Have a Specific Finance Question?
+              </h2>
+
+              <p class="finance-cta-subtext">
+                Our advisors are ready to help — book a free consultation today.
+              </p>
+
+              <div class="finance-cta-action-row">
+                <a href="contact.html" class="finance-cta-button">
+                  Book Free Consultation
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
 
@@ -255,7 +571,7 @@
             </p>
           </div>
 
-          <a href="contact.html" class="footer-btn">Free Consultation</a>
+          <a href="contact.html" class="footer-btn">Contact Us</a>
         </div>
       </div>
 
