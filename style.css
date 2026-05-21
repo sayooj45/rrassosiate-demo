@@ -651,7 +651,6 @@ h4 {
   color: var(--text);
   line-height: 1.8;
 }
-*/
 
 /* ================= ABOUT ================= */
 .about-grid {
@@ -920,7 +919,7 @@ h4 {
 /* MAIN */
 .footer-main-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 50px;
   padding: 75px 0;
 }
@@ -4323,12 +4322,12 @@ h4 {
 /* New: Handles restructuring for Mobile Devices */
 @media (max-width: 768px) {
   .stats-wrap {
-    grid-template-columns: 1fr; /* Stacks cards in one clean line vertically on mobile */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .stat-box {
-    padding: 30px 20px; /* Reduces container bloating space on tiny screens */
+    padding: 30px 20px;
   }
 }
 
@@ -4337,39 +4336,39 @@ h4 {
 ================================================== */
 
 /* Background layer styling matching your uploaded image blueprint */
-.stats-section {
+/* .stats-section {
   background: linear-gradient(rgba(0, 31, 63, 0.82), rgba(0, 31, 63, 0.88)),
-    url("./pics/bg.jpeg"); /* Uses your dark blue image setup */
+    url("./pics/bg.jpeg"); 
   background-size: cover;
   background-position: center;
   padding: 100px 0;
-}
+} */
 
 /* Flex layout container that dynamically spans 100% width uniformly */
-.stats-wrap {
+/* .stats-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
   width: 100%;
   margin-top: 40px;
-}
+} */
 
 /* Elegant Translucent Glass Card Configuration */
-.stat-box-glass {
-  flex: 1; /* Forces each card to expand equally to fill all right-side gaps */
-  background: rgba(255, 255, 255, 0.03); /* Translucent overlay fill */
-  backdrop-filter: blur(12px); /* Blurred glass frosting effect */
+/* .stat-box-glass {
+  flex: 1; 
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12); /* Subtle white border outline */
-  border-radius: 20px; /* Rounded corner look matching screenshot */
+  border: 1px solid rgba(255, 255, 255, 0.12); 
+  border-radius: 20px; 
   padding: 45px 30px;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+} */
 
 /* Subtle premium lift effect when a user interacts with a card */
-.stat-box-glass:hover {
+/* .stat-box-glass:hover {
   transform: translateY(-6px);
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(
@@ -4377,34 +4376,34 @@ h4 {
     182,
     66,
     0.4
-  ); /* Subtle gold boundary accent highlight */
+  ); 
   cursor: pointer;
-}
+} */
 
 /* Card Large Gold Number Typography */
-.stat-box-glass h3 {
+/* .stat-box-glass h3 {
   font-family: "Playfair Display", Georgia, serif;
-  color: var(--gold, #edb642); /* Uses your premium brand accent tone */
+  color: var(--gold, #edb642); 
   font-size: 46px;
   font-weight: 600;
   margin: 0 0 12px 0;
   line-height: 1;
-}
+} */
 
 /* Card Secondary Description Content */
-.stat-box-glass p {
+/* .stat-box-glass p {
   font-family: "Plus Jakarta Sans", sans-serif;
-  color: #a3b8cc; /* Soft contrast grayish blue font color */
+  color: #a3b8cc; 
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
   margin: 0;
-}
+} */
 
 /* ================= FULL RESPONSIVE VIEWPORTS ================= */
 
 /* For smaller desktop monitors and tablet screens */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .stats-wrap {
     gap: 16px;
   }
@@ -4414,19 +4413,19 @@ h4 {
   .stat-box-glass h3 {
     font-size: 38px;
   }
-}
+} */
 
 /* For mobile devices - changes horizontal row smoothly into a vertical column stack */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .stats-wrap {
-    flex-direction: column; /* Stacks layout items cleanly vertically */
+    flex-direction: column; 
     gap: 20px;
   }
   .stat-box-glass {
-    width: 100%; /* Spans across full width layout on modern phones safely */
+    width: 100%; 
     padding: 40px 20px;
   }
-}
+} */
 
 /* ==================================================
    PREMIUM DARK SERVICES SECTION
@@ -5036,6 +5035,78 @@ h4 {
   padding: 100px 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+.dark-blog-section .container {
+  position: relative;
+}
+
+/* .blog-header-text {
+  display: flex;
+  flex-direction: column;
+} */
+
+.view-all-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none !important;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevents text elements from snapping into narrow columns */
+  transition: all 0.3s ease;
+}
+
+.view-all-blog-btn .btn-arrow {
+  margin-left: 8px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Interactive Hover States */
+.view-all-blog-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gold, #cca44c);
+  color: var(--gold, #cca44c) !important;
+}
+
+.view-all-blog-btn:hover .btn-arrow {
+  transform: translateX(4px); /* Micro-animation push effect */
+}
+
+/* =========================================================================
+   RESPONSIVE LAYOUT RESPONSIVE BREAKPOINT (640px and below)
+   ========================================================================= */
+@media (max-width: 640px) {
+  /* On compact screen profiles, the button drops below titles gracefully */
+  .blog-header-wrap {
+    flex-direction: column;
+    align-items: flex-start; /* Clean left-edge stacking alignment */
+    gap: 16px;
+    margin-bottom: 35px;
+  }
+
+  .view-all-blog-btn {
+    width: 100%; /* Stretches seamlessly to create an expansive tap surface area on mobile phones */
+    padding: 14px;
+    box-sizing: border-box;
+  }
+}
+
+.blog-header-wrap {
+  display: flex;
+  align-items: flex-end; /* Keeps button sitting cleanly on the text baseline */
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px; /* Spacing cushion above your grid cards layout */
+  gap: 24px;
 }
 
 .blog-main-title {
@@ -6814,7 +6885,7 @@ h4 {
 
 .ind-card-content h3 {
   font-family: "Cormorant Garamond", serif;
-  color: #ffffff;
+  color: var(--navy);
   font-size: 21px;
   font-weight: 500;
   margin: 0 0 14px 0;
@@ -8324,5 +8395,528 @@ h4 {
 
   .hero p {
     font-size: 14px !important;
+  }
+}
+
+/* =========================================================================
+   PREMIUM STATS RIBBON ROW
+   ========================================================================= */
+.stats-section {
+  background-color: var(--navy);
+  padding: 40px 0 !important; /* Elegant vertical padding metrics */
+  width: 100% !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.stats-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* Elegant vertical divider lines between columns */
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 55px; /* Height of the vertical line */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.25
+  ); /* Subtle, semi-transparent white divider line */
+}
+
+/* Big Bold Numbers styling */
+.stat-item h3 {
+  color: #ffffff !important;
+  font-family: "Cormorant Garamond", serif; /* Elegant serif look matching your brand logo typography */
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+/* Description Text Labels styling */
+.stat-item p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase; /* Clean uppercase letter style */
+  letter-spacing: 0.8px;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* =========================================================================
+   RESPONSIVE LAYOUT BREAKPOINTS (MOBILE & TABLET OPTIMIZATION)
+   ========================================================================= */
+
+/* For Small Laptops and Tablets (Turns into a neat 2x2 grid) */
+@media (max-width: 991px) {
+  .stats-row {
+    flex-wrap: wrap; /* Allows items to wrap onto a second line */
+  }
+
+  .stat-item {
+    flex: calc(50% - 20px); /* Sets up a clean 2-column layout structure */
+    margin-bottom: 24px;
+    padding: 10px;
+  }
+
+  /* Clear old desktop divider layout lines for tablet viewports */
+  .stat-item::after {
+    display: none !important;
+  }
+
+  /* Add temporary tablet borders to separate left and right items */
+  .stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Remove bottom margin on the last row items */
+  .stat-item:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+}
+
+/* For Compact Phone Screens (Vertical Stack Layout Area) */
+@media (max-width: 520px) {
+  .stats-section {
+    padding: 30px 0 !important;
+  }
+
+  .stat-item {
+    flex: 100% !important; /* Stacks columns directly on top of each other */
+    border-right: none !important; /* Clears row border layouts */
+    margin-bottom: 24px;
+    padding: 8px 0;
+  }
+
+  .stat-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Adds a subtle horizontal separator between items on mobile */
+    padding-bottom: 20px;
+  }
+
+  .stat-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .stat-item h3 {
+    font-size: 36px; /* Slightly downscaled size to keep elements clean on phones */
+  }
+
+  .stat-item p {
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.service-card-premium-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.service-card-premium-link:hover {
+  transform: translateY(-5px); /* Clean subtle lift effect on card hover */
+}
+
+/* Ensure the parent block is the point of origin */
+.matrix-block {
+  position: relative;
+}
+
+/* Invisible custom scroll element positioning */
+.scroll-anchor {
+  position: absolute;
+  top: -160px; /* Forces the scroll target up past your fixed top header banner */
+  left: 0;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* HTML smooth scroll rule */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile viewport navigation height scaling adjustments */
+@media (max-width: 991px) {
+  .scroll-anchor {
+    top: -240px; /* Extra offset breathing room for stacked navigation cards on tablet sizes */
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-anchor {
+    top: -40px; /* Clean alignment check for mobile mobile views */
+  }
+}
+
+.industries-section .container {
+  position: relative;
+}
+.industries-section .container .section-header-wrap .mini-tag {
+  max-width: 200px;
+}
+/* =========================================================================
+   BULLETPROOF RESPONSIVE GRID & CARDS FIX
+   ========================================================================= */
+
+/* 1. Global Box Sizing Check (Crucial for mobile) */
+.industries-section,
+.industries-section * {
+  box-sizing: border-box; /* Prevents paddings from pushing cards out of screen bounds */
+}
+
+/* 2. Main Grid Base Setup */
+.grid.four {
+  display: grid;
+  gap: 24px;
+  width: 100%;
+  margin-top: 45px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on Desktop */
+}
+
+/* 3. Base Card Tweaks */
+.card {
+  width: 100%; /* Force cards to use grid sizing instead of fixed widths */
+  background: #fff;
+  padding: 32px;
+  border-radius: var(--radius, 12px);
+  box-sizing: border-box;
+}
+
+/* =========================================================================
+   MEDIA QUERIES FOR RESPONSIVE TABLET & MOBILE VIEWS
+   ========================================================================= */
+
+/* Tablet View (Screens smaller than 1024px) */
+@media (max-width: 1024px) {
+  .grid.four {
+    grid-template-columns: repeat(2, 1fr); /* Clean 2-column layout grid */
+    gap: 20px;
+  }
+}
+
+/* Mobile View (Screens smaller than 768px) */
+@media (max-width: 768px) {
+  .grid.four {
+    grid-template-columns: 1fr; /* 1 Column full-width vertical stack */
+    gap: 16px; /* Slightly tighter gap for mobile layouts */
+    margin-top: 30px;
+  }
+
+  .card {
+    padding: 24px; /* Lower padding inside card so text doesn't look crowded */
+  }
+
+  .card h3 {
+    font-size: 22px; /* Scales down massive headings for compact viewports */
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+/* Flexbox wrapper that aligns text to the left and button to the right */
+/* =========================================================================
+   FIXED RESPONSIVE INDUSTRIES HEADER
+   ========================================================================= */
+.section-header-wrap {
+  display: flex;
+  align-items: flex-end; /* Clean bottom text baseline matching alignment */
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px;
+  gap: 30px; /* Secure horizontal breathing space gap metrics */
+  box-sizing: border-box;
+}
+
+.header-text-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allows the text block to naturally occupy available space */
+  min-width: 0; /* Critical CSS fix to prevent long flex text strings from overflowing */
+}
+
+/* Ensure title handles small viewports beautifully */
+.section-header-wrap h2.title.white {
+  font-size: clamp(
+    24px,
+    4vw,
+    36px
+  ); /* Fluid typography scaling based on device size */
+  margin-top: 8px;
+  line-height: 1.2;
+}
+
+/* Custom Outlined Action Button Styling */
+.know-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none !important;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevents text splitting across multiple lines inside button wrapper */
+  transition: all 0.3s ease;
+}
+
+.know-more-btn .btn-arrow {
+  margin-left: 8px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.know-more-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #cca44c;
+  color: #cca44c !important;
+}
+
+.know-more-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================================================
+   BULLETPROOF MOBILE MEDIA QUERIES (FIXES YOUR OVERLAP PROBLEM)
+   ========================================================================= */
+@media (max-width: 768px) {
+  .section-header-wrap {
+    flex-direction: column; /* Switches from side-by-side to stacked view */
+    align-items: flex-start; /* Instantly aligns both elements to the left edge */
+    gap: 16px; /* Reduced layout spacing cushion */
+    margin-bottom: 30px;
+  }
+
+  .know-more-btn {
+    align-self: flex-start; /* Keeps the button cleanly sized to its text instead of filling the screen */
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For small phone screens, stretch the button to be an easy tap target */
+  .know-more-btn {
+    width: 100%;
+    box-sizing: border-box;
+    align-self: stretch;
+  }
+}
+
+/* =========================================================================
+   PREMIUM REDESIGNED SERVICES PAGES
+   ========================================================================= */
+.premium-services-section {
+  padding: 100px 0;
+  background-color: #031628; /* Matches your premium dark background palette */
+  color: #ffffff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow: hidden;
+}
+
+.services-layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px; /* Generous vertical breathing room between your main blocks */
+}
+
+/* Base structural layout for each service block */
+.modern-service-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+/* Alternating rows pattern engine */
+.modern-service-row.reverse-row {
+  flex-direction: row-reverse;
+}
+
+/* Embedded Page Target Offset Scroll Anchor Fix */
+.modern-service-row .scroll-anchor {
+  position: absolute;
+  top: -160px; /* Perfect offset height alignment cushion beneath fixed header navigation */
+  left: 0;
+  visibility: hidden;
+}
+
+/* Media/Image Containers Side */
+.service-media-side {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-display-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: block;
+}
+
+/* Text Content Blocks Side */
+.service-text-side {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.service-num-badge {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  color: #cca44c; /* Accent brand gold color */
+  font-weight: 600;
+  border-bottom: 1px solid rgba(204, 164, 76, 0.4);
+  padding-bottom: 2px;
+}
+
+.service-row-title {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.service-row-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #a0aec0; /* Balanced readability tone text */
+  margin-bottom: 32px;
+}
+
+/* Clean Capabilities System (Removes old spreadsheet table styles) */
+.sub-services-wrapper {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+}
+
+.capabilities-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #cca44c;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.capability-tags-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Split items into a clean dual column stack text list */
+  gap: 12px 24px;
+}
+
+.capability-tags-list li {
+  font-size: 14px;
+  color: #e2e8f0;
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.4;
+}
+
+/* Elegant micro check indicator dot */
+.capability-tags-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #cca44c;
+  font-size: 16px;
+}
+
+/* =========================================================================
+   ROBUST RESPONSIVE ENGINE FOR REDESIGNED MATRIX
+   ========================================================================= */
+@media (max-width: 991px) {
+  .services-layout-container {
+    gap: 80px;
+  }
+
+  .modern-service-row,
+  .modern-service-row.reverse-row {
+    flex-direction: column; /* Collapses into stacked blocks on tablet views */
+    gap: 32px;
+  }
+
+  .service-display-img {
+    height: 320px; /* Slightly lower crop bounds for medium screens */
+  }
+
+  .service-row-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .premium-services-section {
+    padding: 60px 0;
+  }
+
+  .capability-tags-list {
+    grid-template-columns: 1fr; /* 1 column simple stacked view on small phones */
+    gap: 10px;
+  }
+
+  .service-display-img {
+    height: 220px;
   }
 }
