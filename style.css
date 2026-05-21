@@ -4437,6 +4437,74 @@ h4 {
   width: 100%;
   box-sizing: border-box;
 }
+.dark-services .container {
+  position: relative;
+}
+
+.services-header-wrap {
+  display: flex;
+  align-items: flex-end; /* Snaps baseline perfectly with the main h2 header line */
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px; /* Cushion layout gap space above grid system */
+  gap: 24px;
+}
+
+.view-all-services-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: #031628 !important; /* Premium dark navy blue text color selection */
+  border: 1px solid rgba(3, 22, 40, 0.2); /* Soft dark accent boundary ring */
+  border-radius: 4px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none !important;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevents awkward string wraps */
+  transition: all 0.3s ease;
+}
+
+.view-all-services-btn .btn-arrow {
+  margin-left: 8px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Interactive Hover Feedback Logic */
+.view-all-services-btn:hover {
+  background: rgba(3, 22, 40, 0.04);
+  border-color: #cca44c; /* Transitions to brand accent gold */
+  color: #cca44c !important;
+}
+
+.view-all-services-btn:hover .btn-arrow {
+  transform: translateX(
+    4px
+  ); /* Interactive directional slide visual feedback */
+}
+
+/* =========================================================================
+   RESPONSIVE LAYOUT BREAKPOINT ADJUSTMENT (768px and below)
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* Aligns with your mobile responsive layout engine rules */
+  .services-header-wrap {
+    flex-direction: column;
+    align-items: flex-start; /* Drops button safely below the text string to avoid overlap */
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  .view-all-services-btn {
+    width: 100%; /* Stretches to a wide mobile tap target profile for ease-of-use */
+    padding: 14px;
+    box-sizing: border-box;
+  }
+}
 
 /* Elegant Section Heading */
 .title-serif-light {
@@ -8918,5 +8986,218 @@ html {
 
   .service-display-img {
     height: 220px;
+  }
+}
+
+/* =========================================================================
+   PREMIUM HERO CINEMATIC ENTRANCE SYSTEM
+   ========================================================================= */
+
+/* Base hidden state configuration for elements awaiting animation entry */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px); /* Starts 30px lower down the screen */
+  animation-name: heroFadeInUp;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(
+    0.25,
+    1,
+    0.5,
+    1
+  ); /* Elegant, custom decelerating curve */
+  animation-fill-mode: forwards; /* Ensures elements stay visible after animating */
+  will-change: transform, opacity; /* Optimizes mobile performance render tracks */
+}
+
+/* Precise Staggered Delay Engine */
+.style-delay-1 {
+  animation-delay: 0.2s; /* Pill tag reveals almost instantly */
+}
+
+.style-delay-2 {
+  animation-delay: 0.45s; /* Heading moves upward smoothly next */
+}
+
+.style-delay-3 {
+  animation-delay: 0.75s; /* Buttons slide up gracefully at the end */
+}
+
+/* Micro-interaction updates for Button Hovers */
+.btn-main,
+.btn-outline {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Subtle physical lifting reaction when users hover over buttons */
+.btn-main:hover,
+.btn-outline:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================================
+   ANIMATION KEYFRAME FORMULAS
+   ========================================================================= */
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Snaps perfectly to native layout destination */
+  }
+}
+
+/* Optional: Subtle panning background scale effect for the hero section background image */
+.hero {
+  position: relative;
+  overflow: hidden;
+  animation: heroBackgroundZoom 12s ease-out infinite alternate;
+  background-size: 100% auto;
+}
+
+@keyframes heroBackgroundZoom {
+  0% {
+    background-scale: 1;
+    background-position: center center;
+  }
+  100% {
+    background-size: 106% auto; /* Generates a living breathing premium parallax ambient move */
+  }
+}
+
+/* =========================================================================
+   PREMIER SPLIT-LAYOUT ENTRANCE ANIMATIONS
+   ========================================================================= */
+
+/* Base container protection to avoid animation overflow clipping issues */
+.why-choose-us {
+  overflow: hidden;
+}
+
+/* Left Side: Smooth Slide-In from Left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px); /* Starts slightly to the left */
+  animation: smoothRevealLeft 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px); /* Starts slightly to the right */
+  animation: smoothRevealRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* =========================================================================
+   ANIMATION KEYFRAME FOR RIGHT SLIDE
+   ========================================================================= */
+@keyframes smoothRevealRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(
+      0
+    ); /* Snaps accurately to native layout destination */
+  }
+}
+
+/* Right Side Panels: Smooth Cascade Upwards */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(35px); /* Starts slightly lower down */
+  animation: smoothRevealUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* Precise Staggered Cascading Delays for the Right Side Grid Panels */
+.panel-delay-1 {
+  animation-delay: 0.2s;
+}
+.panel-delay-2 {
+  animation-delay: 0.35s;
+}
+.panel-delay-3 {
+  animation-delay: 0.5s;
+}
+.panel-delay-4 {
+  animation-delay: 0.65s;
+}
+.panel-delay-5 {
+  animation-delay: 1s;
+}
+
+/* Micro-interaction Hover Effects for individual Panel Boxes */
+.panel-box {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease,
+    border-color 0.4s ease !important;
+}
+
+.panel-box:hover {
+  transform: translateY(-5px); /* Elegant interactive lift effect */
+  border-color: #cca44c; /* Accent Gold highlighting */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================================
+   ANIMATION KEYFRAME MODULES
+   ========================================================================= */
+@keyframes smoothRevealLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(
+      0
+    ); /* Snaps accurately to native layout destination */
+  }
+}
+
+@keyframes smoothRevealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================================
+   RESPONSIVE DESIGN SYSTEM OVERRIDES (MOBILE OPTIMIZATION)
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* On compact screen profiles, turn off the side horizontal slide to prevent right-edge clipping */
+  .reveal-left {
+    transform: translateY(30px);
+    animation: smoothRevealUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  .reveal-right {
+    transform: translateY(30px);
+    animation: smoothRevealUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  /* Speeds up cascade sequence on mobile screens for a faster scroll feel */
+  .panel-delay-1 {
+    animation-delay: 0.1s;
+  }
+  .panel-delay-2 {
+    animation-delay: 0.2s;
+  }
+  .panel-delay-3 {
+    animation-delay: 0.3s;
+  }
+  .panel-delay-4 {
+    animation-delay: 0.4s;
   }
 }
